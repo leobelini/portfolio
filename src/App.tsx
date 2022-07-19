@@ -1,70 +1,57 @@
 import Typewriter from 'typewriter-effect'
 
-import videoCode from './assets/code.mp4'
+import moment from 'moment'
+import 'moment/dist/locale/pt-br'
 
 import { Ide } from './components/ide'
+
+moment.locale('pt-BR')
 
 function App() {
 
   return (
     <>
-      <div className='min-h-screen'>
-        <video
-          muted
-          loop
-          autoPlay
-          onPlay={e => e.currentTarget.playbackRate = .5}
-          className="absolute top-0 left-0 object-cover w-full h-full"
-        >
-          <source src={videoCode} type="video/mp4" />
-        </video>
+      <div className='h-screen max-h-screen bg-dark-gunmetal overflow-hidden left-0 right-0 flex flex-1 flex-col'>
+        <header className='pb-6 grow-0 basis-auto'>
+          <h1 className='font-fira-code text-white text-4xl text-center pt-10 font-medium cursor-default'>
+            <span className='underline-anime underline-anime-color'>Leonardo Belini</span>
+          </h1>
+        </header>
 
-        <div className='h-full z-10 absolute bg-gray-900 bg-opacity-90 overflow-hidden left-0 right-0 flex flex-1 flex-col'>
-
-          <header className='pb-10 grow-0 basis-auto'>
-            <h1 className='font-fira-code text-slate-50 text-5xl text-center pt-10 font-medium cursor-default'>
-              <span className='underline-anime underline-anime-color'>Leonardo Belini</span>
-            </h1>
-          </header>
-
-          {/* CONTAINER */}
-          <div className='grow basis-auto flex flex-1 justify-center'>
-            {/* VSCODE */}
-            <Ide />
-          </div>
-          <div className='mt-20 mb-10 grow-0 basis-auto font-fira-code text-slate-50 text-3xl text-center cursor-default'>
-            <Typewriter
-              options={{
-                loop: true,
-              }}
-              onInit={(typewriter) => {
-                typewriter
-                  .typeString('Soluções em:')
-                  .typeString(` React`)
-                  .pauseFor(1000 * 3)
-                  .deleteChars(5)
-                  .typeString(`Node`)
-                  .pauseFor(1000 * 3)
-                  .deleteChars(4)
-                  .typeString(`C#`)
-                  .pauseFor(1000 * 3)
-                  .deleteChars(2)
-                  .typeString(`MySQL`)
-                  .pauseFor(1000 * 3)
-                  .deleteChars(5)
-                  .typeString(`NoSQL`)
-                  .pauseFor(1000 * 3)
-                  .deleteChars(5)
-                  .typeString(`Aplicações web`)
-                  .pauseFor(1000 * 3)
-                  .deleteChars(3)
-                  .typeString(`desktop`)
-                  .pauseFor(1000 * 5)
-                  .deleteAll()
-                  .start()
-              }}
-            />
-          </div>
+        <div className='grow md:mx-0 h-max basis-auto flex flex-1 justify-center px-4 md:px-10 lg:px-48'>
+          <Ide />
+        </div>
+        <div className='mt-14 mb-10 grow-0 basis-auto font-fira-code text-white text-2xl text-center cursor-default'>
+          Soluções em: <Typewriter
+            options={{
+              loop: true,
+            }}
+            onInit={(typewriter) => {
+              typewriter
+                .typeString(` React`)
+                .pauseFor(1000 * 3)
+                .deleteChars(5)
+                .typeString(`Node`)
+                .pauseFor(1000 * 3)
+                .deleteChars(4)
+                .typeString(`C#`)
+                .pauseFor(1000 * 3)
+                .deleteChars(2)
+                .typeString(`MySQL`)
+                .pauseFor(1000 * 3)
+                .deleteChars(5)
+                .typeString(`NoSQL`)
+                .pauseFor(1000 * 3)
+                .deleteChars(5)
+                .typeString(`Aplicações web`)
+                .pauseFor(1000 * 3)
+                .deleteChars(3)
+                .typeString(`desktop`)
+                .pauseFor(1000 * 5)
+                .deleteAll()
+                .start()
+            }}
+          />
         </div>
       </div>
 

@@ -8,7 +8,7 @@
 /* Firefox */
 * {
   scrollbar-width: auto;
-  scrollbar-color: #404040 #ffffff;
+  scrollbar-color: #1F262C #1F262C;
 }
 
 /* Chrome, Edge, and Safari */
@@ -17,21 +17,17 @@
 }
 
 *::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: #fff;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #404040;
-  border-radius: 10px;
-  border: 2px solid #ffffff;
-}
-
-.div-video ::-webkit-scrollbar {
-  width: 0 !important;
+  background-color: #070f15;
+  border-radius: 2px;
+  border: 2px solid #1F262C;
 }
 
 html {
-  background-color: #444444;
+  background-color: #1F262C;
 }
 
 .underline-anime {
@@ -44,7 +40,7 @@ html {
 }
 
 .underline-anime-color {
-  background-image: linear-gradient(transparent, transparent), linear-gradient(#DA0037, #820021)
+  background-image: linear-gradient(transparent, transparent), linear-gradient(#DA0037, #DA0037)
 }
 
 .underline-anime:hover {

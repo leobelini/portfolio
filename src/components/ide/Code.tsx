@@ -1,18 +1,15 @@
 import { useContext } from 'react'
 import { useBoolean } from 'react-hanger'
-import SyntaxHighlighter from 'react-syntax-highlighter'
 
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 import { BsEmojiWink, BsEmojiFrown } from 'react-icons/bs'
-
-
-import { IdeContext } from './ideContext'
+import { IdeContext } from './IdeContext'
 
 export const Code: React.FC = () => {
   const { currentItem } = useContext(IdeContext)
   if (!currentItem)
     return (
-      <div className='text-slate-50 p-3 text-center'>
+      <div className='text-gray-500 p-3 text-center'>
         <p className='my-3'>
           <RenderLine text={<span className='text-3xl'>404 <BsEmojiFrown className='inline mx-3' /></span>} prev={<span className='text-3xl'># </span>} />
         </p>
@@ -21,7 +18,7 @@ export const Code: React.FC = () => {
           <RenderLine text={<span className='text-2xl'>O arquivo que você está procurando não existe.</span>} prev={<span className='text-2xl'>## </span>} />
         </p>
         <p className='my-4'>
-          <RenderLine text={<span className='text-lg'>Utilize <AiOutlineArrowLeft className='inline mx-3' /> ou <AiOutlineArrowRight className='inline mx-3' /> disponível na barra de navegação para navegar entre os arquivos.</span>} />
+          <RenderLine text={<span className='text-lg'>Utilize <AiOutlineArrowLeft className='inline mx-3' /> ou <AiOutlineArrowRight className='inline mx-3' /> disponível na barra de navegação para alterar o arquivo visualizado.</span>} />
         </p>
         <p className='my-4'>
           <RenderLine text={<span className='text-lg'>Selecione um arquivo à esquerda para pré visualiza-lo.</span>} />
@@ -33,7 +30,7 @@ export const Code: React.FC = () => {
 
       </div>
     )
-  return currentItem.render
+  return (<><currentItem.Render /></>)
 }
 
 type RenderLineProps = {

@@ -1,4 +1,4 @@
-import { createContext, useMemo } from "react"
+import { createContext, useCallback, useMemo } from "react"
 import { useArray, useStateful } from "react-hanger"
 import { IdeDb, IdeDbType } from "./IdeDb"
 
@@ -7,6 +7,7 @@ interface IdeContextType {
   nextKey: string | undefined
   prevKey: string | undefined
   listItem: IdeDbType[]
+  setCurrentItem: (key: string | undefined) => void
 }
 
 type IdeProviderProps = {
@@ -32,13 +33,18 @@ export const IdeProvider: React.FC<IdeProviderProps> = ({ children }) => {
     return currentItem?.prevKey
   }, [currentItem])
 
+  const setCurrentItem = useCallback((key: string | undefined) => {
+    if (key) currentKey.setValue(key)
+  }, [])
+
   return (
     <IdeContext.Provider
       value={{
         currentItem,
         nextKey,
         prevKey,
-        listItem: listItem.value
+        listItem: listItem.value,
+        setCurrentItem
       }}
     >
       {children}
