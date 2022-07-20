@@ -3,15 +3,16 @@ import { AiTwotoneFolderOpen } from 'react-icons/ai'
 import { useCallback, useContext } from 'react'
 
 import { IdeContext } from './IdeContext'
-import { IdeDbType } from './IdeDb'
+import { listRoutes } from '../../pages/routes'
+import { Link } from 'react-router-dom'
 
 export const FileNavigator: React.FC = () => {
-  const { currentItem, listItem, setCurrentItem } = useContext(IdeContext)
+  const { currentPath } = useContext(IdeContext)
 
-  const checkIsCurrent = useCallback((currentValue: IdeDbType, checkValue: IdeDbType | undefined) => {
-    if (!checkValue) return false
-    return currentValue.key === checkValue.key
-  }, [])
+  const checkIsCurrent = useCallback((currentValue: string) => {
+    if (!currentPath) return false
+    return currentValue === currentPath
+  }, [currentPath])
 
   return (
     <div className='bg-chinese-black-2 min-h-full max-h-full w-1/3 hidden md:block text-gray-400'>
@@ -27,13 +28,14 @@ export const FileNavigator: React.FC = () => {
             <span className='flex items-center'><AiTwotoneFolderOpen className='mr-2' />src</span>
           </li>
           <ul>
-            {listItem?.map(item => (
+            {listRoutes.map(item => (
               <li
-                className={`py-1 pl-6 cursor-pointer hover:bg-dark-jungle-green ${checkIsCurrent(item, currentItem) && 'bg-dark-jungle-green'}`}
+                className={`py-1 pl-6 hover:bg-dark-jungle-green ${checkIsCurrent(item.path) && 'bg-dark-jungle-green'}`}
                 key={item.key}
-                onClick={() => setCurrentItem(item.key)}
               >
-                <span className='flex items-center'><item.Icon className='mr-2' />{item.name}</span>
+                <Link className='flex items-center' to={item.path}>
+                  <item.Icon className='mr-2' />{item.name}
+                </Link>
               </li>
             ))}
           </ul>

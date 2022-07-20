@@ -1,5 +1,6 @@
-import { Ide } from './components/ide'
+import { Layout } from './components/layout'
 import { SolutionsText } from './components/solutionsText'
+import { Routes } from './pages/routes'
 
 function App() {
   return (
@@ -10,9 +11,10 @@ function App() {
             <span className='underline-anime underline-anime-color'>Leonardo Belini</span>
           </h1>
         </header>
-
         <div className='grow md:mx-0 h-max basis-auto flex flex-1 justify-center px-4 md:px-10 lg:px-48'>
-          <Ide />
+          <Layout>
+            <Routes />
+          </Layout>
         </div>
         <SolutionsText />
       </div>

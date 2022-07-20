@@ -1,12 +1,10 @@
-import { TbCSharp } from 'react-icons/tb'
 import { MdArchitecture } from 'react-icons/md'
 import { HiAcademicCap } from 'react-icons/hi'
 import { GiDiploma } from 'react-icons/gi'
 
-import { IdeDbType } from "../IdeDb"
-import { TimeLine, TimeLineContainer } from '../../timeLine'
+import { TimeLine, TimeLineContainer } from '../../components/timeLine'
 
-const Academy = () => {
+export const Academy = () => {
   return (
     <div className='px-10 py-6 text-slate-50'>
       <TimeLineContainer>
@@ -34,13 +32,4 @@ const Academy = () => {
       </TimeLineContainer>
     </div>
   )
-}
-
-export const AcademyDb: IdeDbType = {
-  Icon: TbCSharp,
-  key: `academy`,
-  prevKey: `career`,
-  nextKey: `curriculum`,
-  name: `Academy.cshtml`,
-  Render: Academy,
 }
