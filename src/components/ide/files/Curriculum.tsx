@@ -31,6 +31,6 @@ export const CurriculumDb: IdeDbType = {
   Icon: VscFilePdf,
   key: `curriculum`,
   prevKey: `academy`,
-  name: `ProfileVitae.pdf`,
+  name: `CurriculumVitae.pdf`,
   Render: Curriculum,
 }
