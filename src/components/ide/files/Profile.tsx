@@ -10,7 +10,7 @@ const Profile = () => {
     <div className='px-28 py-6 text-gray-400'>
       <div className='flex flex-1 justify-center items-center mb-10 flex-col'>
         <img src={profile} alt="Foto de perfil de Leonardo Belini" className='rounded-full w-40' />
-        <div className="w-72 mt-6">
+        <div className="text-center mt-6">
 
           <p className='py-2'>
             <b>Nome: </b>Leonardo Siervo Belini

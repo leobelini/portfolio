@@ -7,7 +7,7 @@ export const TopBar: React.FC = () => {
   return (
     <div className='w-full bg-rich-black h-10 flex flex-1 justify-center'>
       <div className='w-full md:w-2/4 h-3/4 m-1 mx-5 flex flex-row items-center justify-center'>
-        <div className='flex flex-row items-center justify-center'>
+        <div className='flex-row items-center justify-center hidden md:flex'>
           <button
             disabled={!prevKey}
             onClick={() => { setCurrentItem(prevKey) }}

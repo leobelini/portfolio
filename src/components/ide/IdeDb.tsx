@@ -1,6 +1,7 @@
 import { IconType } from "react-icons"
 import { AcademyDb } from "./files/Academy"
 import { CareerDb } from "./files/Career"
+import { CurriculumDb } from "./files/Curriculum"
 import { HomeDb } from "./files/Home"
 import { ProfileDb } from "./files/Profile"
 
@@ -13,4 +14,4 @@ export type IdeDbType = {
   Icon: IconType
 }
 
-export const IdeDb: IdeDbType[] = [ProfileDb, HomeDb, CareerDb, AcademyDb]
+export const IdeDb: IdeDbType[] = [ProfileDb, HomeDb, CareerDb, AcademyDb, CurriculumDb]

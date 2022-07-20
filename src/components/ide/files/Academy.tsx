@@ -22,7 +22,7 @@ const Academy = () => {
           Icon={HiAcademicCap}
           prev='Unilins | 2014 - 2017'
         >
-          Faculdade onde solidificou alguns conhecimento adquiridos no passo e durante o curso. Algumas tecnologias apresentadas: JAVA, C# e MySQL.
+          Faculdade onde solidificou alguns conhecimento adquiridos no passado e durante o curso. Algumas tecnologias apresentadas: JAVA, C# e MySQL.
         </TimeLine>
         <TimeLine
           title='Técnico em Informática para WEB'
@@ -40,6 +40,7 @@ export const AcademyDb: IdeDbType = {
   Icon: TbCSharp,
   key: `academy`,
   prevKey: `career`,
+  nextKey: `curriculum`,
   name: `Academy.cshtml`,
   Render: Academy,
 }
