@@ -11,7 +11,7 @@ moment.locale('pt-BR')
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Router>
+    <Router basename='/portifolio/'>
       <App />
     </Router>
   </React.StrictMode>

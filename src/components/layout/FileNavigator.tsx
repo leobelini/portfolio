@@ -27,18 +27,20 @@ export const FileNavigator: React.FC = () => {
           <li className='py-1 px-4 hover:bg-dark-jungle-green'>
             <span className='flex items-center'><AiTwotoneFolderOpen className='mr-2' />src</span>
           </li>
-          <ul>
-            {listRoutes.map(item => (
-              <li
-                className={`py-1 pl-6 hover:bg-dark-jungle-green ${checkIsCurrent(item.path) && 'bg-dark-jungle-green'}`}
-                key={item.key}
-              >
-                <Link className='flex items-center' to={item.path}>
-                  <item.Icon className='mr-2' />{item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <li>
+            <ul>
+              {listRoutes.map(item => (
+                <li
+                  className={`py-1 pl-6 hover:bg-dark-jungle-green ${checkIsCurrent(item.path) && 'bg-dark-jungle-green'}`}
+                  key={item.key}
+                >
+                  <Link className='flex items-center' to={item.path} title={item.key}>
+                    <item.Icon className='mr-2' />{item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </li>
         </ul>
       </div>
     </div>

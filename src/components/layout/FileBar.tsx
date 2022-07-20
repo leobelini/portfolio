@@ -11,8 +11,8 @@ export const FileBar: React.FC = () => {
   }, [currentPath])
   return (
     <div className='w-full bg-dark-jungle-green flex flex-1 flex-row justify-between'>
-      <Link to={prevPath || '/'} className="h-10 px-3 block md:hidden text-slate-200"      >
-        <AiOutlineArrowLeft className='mx-1' />
+      <Link to={prevPath || '/'} className="my-auto px-3 block md:hidden text-slate-200 " title='Página anterior'>
+        <AiOutlineArrowLeft className='mx-1 align-middle' />
       </Link>
       {currentRoute && (
         <div className='basis-auto truncate'>
@@ -21,7 +21,7 @@ export const FileBar: React.FC = () => {
           </div>
         </div>
       )}
-      <Link to={nextPath || '/'} className="h-10 px-3 block md:hidden text-slate-200"      >
+      <Link to={nextPath || '/'} className="my-auto px-3 block md:hidden text-slate-200 align-middle" title='Próxima pagina'>
         <AiOutlineArrowRight className='mx-1' />
       </Link>
     </div>
