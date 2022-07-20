@@ -1,15 +1,7 @@
-import Typewriter from 'typewriter-effect'
-
-import moment from 'moment'
-import 'moment/dist/locale/pt-br'
-
 import { Ide } from './components/ide'
-
-moment.locale('pt-BR')
 import { SolutionsText } from './components/solutionsText'
 
 function App() {
-
   return (
     <>
       <div className='h-screen max-h-screen bg-dark-gunmetal overflow-hidden left-0 right-0 flex flex-1 flex-col'>
