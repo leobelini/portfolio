@@ -1,6 +1,6 @@
-import { createContext, useMemo } from "react"
-import { useLocation } from "react-router-dom"
-import { listRoutes } from "../../pages/routes"
+import { createContext, useMemo } from 'react'
+import { useLocation } from 'react-router-dom'
+import { listRoutes } from '../../pages/routes'
 
 interface IdeContextType {
   currentPath: string | undefined
@@ -18,13 +18,18 @@ export const IdeProvider: React.FC<IdeProviderProps> = ({ children }) => {
   const location = useLocation()
 
   const nextPath = useMemo(() => {
-    const currentIndex = listRoutes.findIndex(c => c.path === location.pathname)
+    const currentIndex = listRoutes.findIndex(
+      (c) => c.path === location.pathname
+    )
     return (listRoutes[currentIndex + 1] || listRoutes[0]).path
   }, [location.pathname])
 
   const prevPath = useMemo(() => {
-    const currentIndex = listRoutes.findIndex(c => c.path === location.pathname)
-    return (listRoutes[currentIndex - 1] || listRoutes[listRoutes.length - 1]).path
+    const currentIndex = listRoutes.findIndex(
+      (c) => c.path === location.pathname
+    )
+    return (listRoutes[currentIndex - 1] || listRoutes[listRoutes.length - 1])
+      .path
   }, [location.pathname])
 
   return (
@@ -32,7 +37,7 @@ export const IdeProvider: React.FC<IdeProviderProps> = ({ children }) => {
       value={{
         currentPath: location.pathname,
         nextPath,
-        prevPath
+        prevPath,
       }}
     >
       {children}

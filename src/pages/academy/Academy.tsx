@@ -6,28 +6,32 @@ import { TimeLine, TimeLineContainer } from '../../components/timeLine'
 
 export const Academy = () => {
   return (
-    <div className='px-10 py-6 text-slate-50'>
+    <div className="px-10 py-6 text-slate-50">
       <TimeLineContainer>
         <TimeLine
-          title='Clean Code e Clean Architecture'
+          title="Clean Code e Clean Architecture"
           Icon={MdArchitecture}
-          prev='Branas.io'
+          prev="Branas.io"
         >
-          Curso sobre TypeScript com Clean Code, Refactoring, TDD, OO, Ports and Adapters, Clean Architecture, Domain-Driven Design, Design Patterns, SOLID, Event Sourcing, CQRS, Event-Driven Architecture e REST.
+          Curso sobre TypeScript com Clean Code, Refactoring, TDD, OO, Ports and
+          Adapters, Clean Architecture, Domain-Driven Design, Design Patterns,
+          SOLID, Event Sourcing, CQRS, Event-Driven Architecture e REST.
         </TimeLine>
         <TimeLine
-          title='Tecnólogo em Análise e Desenvolvimento'
+          title="Tecnólogo em Análise e Desenvolvimento"
           Icon={HiAcademicCap}
-          prev='Unilins | 2014 - 2017'
+          prev="Unilins | 2014 - 2017"
         >
-          Faculdade onde solidificou alguns conhecimento adquiridos no passado e durante o curso. Algumas tecnologias apresentadas: JAVA, C# e MySQL.
+          Faculdade onde solidificou alguns conhecimento adquiridos no passado e
+          durante o curso. Algumas tecnologias apresentadas: JAVA, C# e MySQL.
         </TimeLine>
         <TimeLine
-          title='Técnico em Informática para WEB'
+          title="Técnico em Informática para WEB"
           Icon={GiDiploma}
-          prev='ETEC | 2012 - 2013'
+          prev="ETEC | 2012 - 2013"
         >
-          Curso que abriu as portar para o mundo da tecnologia e desenvolvimento com PHP, HTML e CSS.
+          Curso que abriu as portar para o mundo da tecnologia e desenvolvimento
+          com PHP, HTML e CSS.
         </TimeLine>
       </TimeLineContainer>
     </div>

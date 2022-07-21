@@ -8,7 +8,7 @@
 /* Firefox */
 * {
   scrollbar-width: auto;
-  scrollbar-color: #1F262C #1F262C;
+  scrollbar-color: #1f262c #1f262c;
 }
 
 /* Chrome, Edge, and Safari */
@@ -23,27 +23,29 @@
 *::-webkit-scrollbar-thumb {
   background-color: #070f15;
   border-radius: 2px;
-  border: 2px solid #1F262C;
+  border: 2px solid #1f262c;
 }
 
 html {
-  background-color: #1F262C;
+  background-color: #1f262c;
 }
 
 .underline-anime {
   border-bottom-width: 0;
-  background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(#fff, #fff);
   background-size: 0 3px;
   background-position: 0 100%;
   background-repeat: no-repeat;
-  transition: background-size .5s ease-in-out;
+  transition: background-size 0.5s ease-in-out;
 }
 
 .underline-anime-color {
-  background-image: linear-gradient(transparent, transparent), linear-gradient(#DA0037, #DA0037)
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(#da0037, #da0037);
 }
 
 .underline-anime:hover {
   background-size: 100% 3px;
-  background-position: 0 100%
+  background-position: 0 100%;
 }

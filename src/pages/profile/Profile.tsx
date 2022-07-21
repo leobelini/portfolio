@@ -1,27 +1,35 @@
 import { IconType } from 'react-icons'
-import { AiOutlineMail, AiOutlineWhatsApp, AiFillLinkedin, AiFillGithub } from 'react-icons/ai'
+import {
+  AiOutlineMail,
+  AiOutlineWhatsApp,
+  AiFillLinkedin,
+  AiFillGithub,
+} from 'react-icons/ai'
 import profile from '../../assets/profile.jpg'
 
 export const Profile = () => {
-
   return (
-    <div className='px-28 py-6 text-gray-400'>
-      <div className='flex flex-1 justify-center items-center mb-10 flex-col'>
-        <img src={profile} alt="Foto de perfil de Leonardo Belini" className='rounded-full w-40' />
+    <div className="px-28 py-6 text-gray-400">
+      <div className="flex flex-1 justify-center items-center mb-10 flex-col">
+        <img
+          src={profile}
+          alt="Foto de perfil de Leonardo Belini"
+          className="rounded-full w-40"
+        />
         <div className="text-center mt-6">
-          <p className='py-2'>
+          <p className="py-2">
             <b>Nome: </b>Leonardo Siervo Belini
           </p>
-          <p className='py-2'>
+          <p className="py-2">
             <b>E-mail: </b>leobelini96@gmail.com
           </p>
-          <p className='py-2'>
+          <p className="py-2">
             <b>Telefone/Celular: </b>(14) 99627-1006
           </p>
         </div>
       </div>
 
-      <div className='flex flex-1 justify-center items-center mt-5 text-2xl'>
+      <div className="flex flex-1 justify-center items-center mt-5 text-2xl">
         <SocialLink
           Icon={AiOutlineMail}
           href="mailto:leobelini96@gmail.com?subject=Contato pelo site"
@@ -47,10 +55,21 @@ export const Profile = () => {
   )
 }
 
-interface SocialProps extends React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> {
+interface SocialProps
+  extends React.DetailedHTMLProps<
+    React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    HTMLAnchorElement
+  > {
   Icon: IconType
 }
 
 const SocialLink: React.FC<SocialProps> = ({ Icon, ...props }) => {
-  return <a {...props} className='mx-2 cursor-pointer	hover:text-carmine transition duration-700 hover:scale-150'><Icon /></a>
+  return (
+    <a
+      {...props}
+      className="mx-2 cursor-pointer	hover:text-carmine transition duration-700 hover:scale-150"
+    >
+      <Icon />
+    </a>
+  )
 }
