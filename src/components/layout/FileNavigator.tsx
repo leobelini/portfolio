@@ -25,7 +25,7 @@ export const FileNavigator: React.FC = () => {
       <div className="px-4 py-1 bg-dark-jungle-green">
         <span className="uppercase text-xs flex items-center">
           <BsChevronDown className="mr-2" />
-          Portifolio
+          Portfolio
         </span>
       </div>
       <div className="py-1">
@@ -40,9 +40,8 @@ export const FileNavigator: React.FC = () => {
             <ul>
               {listRoutes.map((item) => (
                 <li
-                  className={`py-1 pl-6 hover:bg-dark-jungle-green ${
-                    checkIsCurrent(item.path) && 'bg-dark-jungle-green'
-                  }`}
+                  className={`py-1 pl-6 hover:bg-dark-jungle-green ${checkIsCurrent(item.path) && 'bg-dark-jungle-green'
+                    }`}
                   key={item.key}
                 >
                   <Link
