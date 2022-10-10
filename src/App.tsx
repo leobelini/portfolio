@@ -1,5 +1,4 @@
 import { Layout } from './components/layout'
-import { SolutionsText } from './components/solutionsText'
 import { Routes } from './pages/routes'
 
 function App() {
@@ -13,12 +12,11 @@ function App() {
             </span>
           </h1>
         </header>
-        <div className="grow md:mx-0 h-max basis-auto flex flex-1 justify-center px-4 md:px-10 lg:px-48">
+        <div className="grow md:mx-0 h-max basis-auto flex flex-1 justify-center px-4 md:px-10 lg:px-48 mb-16">
           <Layout>
             <Routes />
           </Layout>
         </div>
-        <SolutionsText />
       </div>
     </>
   )

@@ -1,4 +1,4 @@
-import { AiFillFileMarkdown, AiFillHtml5 } from 'react-icons/ai'
+import { AiFillHtml5 } from 'react-icons/ai'
 import { FaReact } from 'react-icons/fa'
 import { TbCSharp } from 'react-icons/tb'
 import { VscFilePdf } from 'react-icons/vsc'
