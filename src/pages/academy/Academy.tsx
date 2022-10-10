@@ -6,7 +6,7 @@ import { TimeLine, TimeLineContainer } from '../../components/timeLine'
 
 export const Academy = () => {
   return (
-    <div className="px-28 py-6 text-slate-50">
+    <div className="text-slate-50">
       <TimeLineContainer>
         <TimeLine
           title="Clean Code e Clean Architecture"

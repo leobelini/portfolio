@@ -17,7 +17,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="w-full min-h-full max-h-full bg-chinese-black-3 flex flex-col">
             <FileBar />
             <div className="relative w-full h-full">
-              <div className="w-full h-full overflow-auto scroll-smooth absolute">
+              <div className="w-full h-full px-28 py-10 overflow-auto scroll-smooth absolute">
                 {children}
               </div>
             </div>

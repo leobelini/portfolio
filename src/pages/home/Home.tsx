@@ -8,7 +8,7 @@ import {
 } from 'react-icons/ai'
 import profile from '../../assets/profile.jpg'
 
-export const Profile = () => {
+export const Home = () => {
   const greeting = useMemo(() => {
     const hours = new Date().getHours()
     if (hours >= 0 && hours < 12) return `Bom dia`
@@ -23,7 +23,7 @@ export const Profile = () => {
   }, [])
 
   return (
-    <div className="px-28 py-6 text-gray-400 flex flex-row">
+    <div className="text-gray-400 flex flex-row">
       <div className="basis-3/5">
         <p className="text-lg my-2">{greeting}, tudo bem?</p>
         <p className="my-2">

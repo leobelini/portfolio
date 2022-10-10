@@ -8,15 +8,15 @@ import { Page404 } from './404'
 import { Academy } from './academy'
 import { Career } from './career'
 import { Curriculum } from './curriculum'
-import { Profile } from './profile'
+import { Home } from './home'
 
 export const listRoutes = [
   {
     path: '/',
-    key: `profile`,
+    key: `home`,
     Icon: AiFillHtml5,
-    name: `Profile.html`,
-    Page: Profile,
+    name: `Home.html`,
+    Page: Home,
   },
   {
     path: '/career',
