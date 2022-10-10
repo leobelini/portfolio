@@ -8,7 +8,7 @@ import { Time } from './components/Time'
 
 export const Career = () => {
   return (
-    <div className="px-10 py-6 text-slate-50">
+    <div className="px-28 py-6 text-slate-50">
       <TimeLineContainer>
         <Time
           Icon={FaRobot}
