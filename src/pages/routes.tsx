@@ -8,7 +8,6 @@ import { Page404 } from './404'
 import { Academy } from './academy'
 import { Career } from './career'
 import { Curriculum } from './curriculum'
-import { Home } from './home'
 import { Profile } from './profile'
 
 export const listRoutes = [
@@ -18,13 +17,6 @@ export const listRoutes = [
     Icon: AiFillHtml5,
     name: `Profile.html`,
     Page: Profile,
-  },
-  {
-    path: '/home',
-    key: `home`,
-    Icon: AiFillFileMarkdown,
-    name: `Home.md`,
-    Page: Home,
   },
   {
     path: '/career',
