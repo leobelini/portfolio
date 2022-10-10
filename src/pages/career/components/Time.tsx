@@ -24,16 +24,19 @@ export const Time: React.FC<TimeProps> = ({
 }) => {
   const timeText = useMemo(() => {
     const startTime = time.start
-    let endTime: moment.Moment | undefined
-    if (time.end) endTime = time.end
-    const totalDiffMonth: number =
-      (endTime || moment()).diff(startTime, 'month', false) + 1
+    let endTime = time.end
+
+    const totalDiffMonth = (endTime || moment()).diff(startTime, 'month', false)
+
     const diffYear = Math.floor(totalDiffMonth / 12)
     const diffMonth = totalDiffMonth - diffYear * 12
+
     const startText = startTime.format(`MMMM [de] YYYY`)
     const endText = endTime ? endTime.format(`MMMM [de] YYYY`) : `o momento`
+
     let diffText = diffYear > 0 ? `${diffYear} ano(s)` : ``
     diffText += diffMonth > 0 ? ` ${diffMonth} mes(es)` : ``
+
     return `${startText} - ${endText} - ${diffText}`
   }, [])
 
