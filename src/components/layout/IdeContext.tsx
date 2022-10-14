@@ -1,4 +1,5 @@
 import { createContext, useMemo } from 'react'
+import { UseBoolean, useBoolean } from 'react-hanger'
 import { useLocation } from 'react-router-dom'
 import { listRoutes } from '../../pages/routes'
 
@@ -6,6 +7,7 @@ interface IdeContextType {
   currentPath: string | undefined
   nextPath: string | undefined
   prevPath: string | undefined
+  inCode: UseBoolean
 }
 
 type IdeProviderProps = {
@@ -15,6 +17,7 @@ type IdeProviderProps = {
 export const IdeContext = createContext({} as IdeContextType)
 
 export const IdeProvider: React.FC<IdeProviderProps> = ({ children }) => {
+  const inCode = useBoolean(false)
   const location = useLocation()
 
   const nextPath = useMemo(() => {
@@ -38,6 +41,7 @@ export const IdeProvider: React.FC<IdeProviderProps> = ({ children }) => {
         currentPath: location.pathname,
         nextPath,
         prevPath,
+        inCode,
       }}
     >
       {children}

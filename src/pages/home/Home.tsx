@@ -23,20 +23,28 @@ import profile from '../../assets/profile.jpg'
 import { Tooltip } from '../../components/tooltip'
 
 const listTechnology = [
-  { Icon: RiHtml5Line, name: `HTML5`, color:`text-html-brand` },
-  { Icon: RiCss3Line, name: `CSS3`, color:`text-css-brand` },
-  { Icon: TbBrandJavascript, name: `JavaScript`,color: `text-js-brand` },
-  { Icon: RiReactjsLine, name: `React`,color: `text-react-brand` },
-  { Icon: TbBrandReactNative, name: `React Native`,color: `text-react-native-brand` },
-  { Icon: FaNodeJs, name: `Node.js`,color: `text-node-brand` },
-  { Icon: SiAdonisjs, name: `AdonisJS`,color: `text-adonis-brand` },
-  { Icon: SiNestjs, name: `Nest.js`,color: `text-nestjs-brand` },
-  { Icon: SiExpress, name: `Express.js`,color: `text-express-brand` },
-  { Icon: SiElectron, name: `Electron`,color: `text-electron-brand` },
+  { Icon: RiHtml5Line, name: `HTML5`, color: `text-html-brand` },
+  { Icon: RiCss3Line, name: `CSS3`, color: `text-css-brand` },
+  { Icon: TbBrandJavascript, name: `JavaScript`, color: `text-js-brand` },
+  { Icon: RiReactjsLine, name: `React`, color: `text-react-brand` },
+  {
+    Icon: TbBrandReactNative,
+    name: `React Native`,
+    color: `text-react-native-brand`,
+  },
+  { Icon: FaNodeJs, name: `Node.js`, color: `text-node-brand` },
+  { Icon: SiAdonisjs, name: `AdonisJS`, color: `text-adonis-brand` },
+  { Icon: SiNestjs, name: `Nest.js`, color: `text-nestjs-brand` },
+  { Icon: SiExpress, name: `Express.js`, color: `text-express-brand` },
+  { Icon: SiElectron, name: `Electron`, color: `text-electron-brand` },
   { Icon: TbCSharp, name: `C#`, color: `text-c-charp-brand` },
-  { Icon: SiMongodb, name: `MongoDB`,color: `text-mongodb-brand` },
-  { Icon: SiMicrosoftsqlserver, name: `SQL Server`,color: `text-sql-server-brand` },
-  { Icon: SiPostgresql, name: `PostgreSQL`,color: `text-postgre-sql-brand` },
+  { Icon: SiMongodb, name: `MongoDB`, color: `text-mongodb-brand` },
+  {
+    Icon: SiMicrosoftsqlserver,
+    name: `SQL Server`,
+    color: `text-sql-server-brand`,
+  },
+  { Icon: SiPostgresql, name: `PostgreSQL`, color: `text-postgre-sql-brand` },
 ]
 
 export const Home = () => {
@@ -73,7 +81,12 @@ export const Home = () => {
         </p>
         <div className="flex flex-wrap">
           {listTechnology.map((tec) => (
-            <IconTechnology key={tec.name} name={tec.name} Icon={tec.Icon} color={tec.color}/>
+            <IconTechnology
+              key={tec.name}
+              name={tec.name}
+              Icon={tec.Icon}
+              color={tec.color}
+            />
           ))}
         </div>
       </div>
@@ -152,7 +165,7 @@ const Link: React.FC<LinkProps> = ({ href, text }) => {
   return (
     <a
       href={href}
-      className="decoration-carmine font-medium	"
+      className="decoration-carmine font-medium"
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -168,11 +181,17 @@ interface IconTechnologyProps {
   color?: string
 }
 
-const IconTechnology: React.FC<IconTechnologyProps> = ({ Icon, name, color }) => {
-const colorText = color || `text-carmine`
+const IconTechnology: React.FC<IconTechnologyProps> = ({
+  Icon,
+  name,
+  color,
+}) => {
+  const colorText = color || `text-carmine`
   return (
     <Tooltip tooltipContent={name}>
-        <Icon className={`h-10 w-10 p-2 hover:${colorText} transition duration-300 hover:scale-150`}/>
+      <Icon
+        className={`h-10 w-10 p-2 hover:${colorText} transition duration-300 hover:scale-150`}
+      />
     </Tooltip>
   )
 }

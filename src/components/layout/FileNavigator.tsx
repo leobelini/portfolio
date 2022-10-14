@@ -9,10 +9,10 @@ import { Link } from 'react-router-dom'
 export const FileNavigator: React.FC = () => {
   const { currentPath } = useContext(IdeContext)
 
-  const checkIsCurrent = useCallback(
+  const activePath = useCallback(
     (currentValue: string) => {
-      if (!currentPath) return false
-      return currentValue === currentPath
+      if (currentValue === currentPath) return `bg-dark-gunmetal font-semibold`
+      return ``
     },
     [currentPath]
   )
@@ -40,8 +40,9 @@ export const FileNavigator: React.FC = () => {
             <ul>
               {listRoutes.map((item) => (
                 <li
-                  className={`py-1 pl-6 hover:bg-dark-jungle-green ${checkIsCurrent(item.path) && 'bg-dark-jungle-green'
-                    }`}
+                  className={`py-1 pl-6 hover:bg-dark-jungle-green ${activePath(
+                    item.path
+                  )}`}
                   key={item.key}
                 >
                   <Link

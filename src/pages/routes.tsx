@@ -1,10 +1,7 @@
-import { AiFillHtml5 } from 'react-icons/ai'
 import { FaReact } from 'react-icons/fa'
-import { TbCSharp } from 'react-icons/tb'
-import { VscFilePdf } from 'react-icons/vsc'
 import { Navigate, Route, Routes as BrowserRoutes } from 'react-router-dom'
-import { Page404 } from './404'
 
+import { Page404 } from './404'
 import { Academy } from './academy'
 import { Career } from './career'
 import { Curriculum } from './curriculum'
@@ -14,8 +11,8 @@ export const listRoutes = [
   {
     path: '/',
     key: `home`,
-    Icon: AiFillHtml5,
-    name: `Home.html`,
+    Icon: FaReact,
+    name: `Home.tsx`,
     Page: Home,
   },
   {
@@ -28,15 +25,15 @@ export const listRoutes = [
   {
     path: '/academy',
     key: `academy`,
-    Icon: TbCSharp,
-    name: `Academy.cshtml`,
+    Icon: FaReact,
+    name: `Academy.tsx`,
     Page: Academy,
   },
   {
     path: '/curriculum',
     key: `curriculum`,
-    Icon: VscFilePdf,
-    name: `CurriculumVitae.pdf`,
+    Icon: FaReact,
+    name: `CurriculumVitae.tsx`,
     Page: Curriculum,
   },
 ]
