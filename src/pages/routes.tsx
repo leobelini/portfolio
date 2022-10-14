@@ -33,7 +33,7 @@ export const listRoutes = [
     path: '/curriculum',
     key: `curriculum`,
     Icon: FaReact,
-    name: `CurriculumVitae.tsx`,
+    name: `Curriculum.tsx`,
     Page: Curriculum,
   },
 ]
