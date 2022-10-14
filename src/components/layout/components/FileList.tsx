@@ -1,11 +1,9 @@
-import { BsChevronDown } from 'react-icons/bs'
-import { AiTwotoneFolderOpen, AiTwotoneFolder } from 'react-icons/ai'
+import { AiTwotoneFolder } from 'react-icons/ai'
+import axios from 'axios'
 import React, { useCallback, useContext, useEffect } from 'react'
 
-import { Link } from 'react-router-dom'
 import { IdeContext } from '../IdeContext'
-import { useArray, useBoolean, useStateful } from 'react-hanger'
-import axios from 'axios'
+import { useArray, useBoolean } from 'react-hanger'
 import { FaReact } from 'react-icons/fa'
 import { IsTrue } from '../../isTrue'
 
@@ -30,7 +28,7 @@ interface TypeTreeRefactor {
   isFolder: boolean
 }
 
-export const ListFiles: React.FC = () => {
+export const FileList: React.FC = () => {
   const { currentPath } = useContext(IdeContext)
 
   const files = useArray<{ name: string; prev?: string; isFolder: boolean }>([])

@@ -1,22 +1,12 @@
 import { BsChevronDown } from 'react-icons/bs'
-import { AiTwotoneFolderOpen } from 'react-icons/ai'
-import { useCallback, useContext } from 'react'
+import { useContext } from 'react'
 
 import { IdeContext } from './IdeContext'
-import { listRoutes } from '../../pages/routes'
-import { Link } from 'react-router-dom'
-import { ListFiles } from './components/ListFiles'
+import { FileList } from './components/FileList'
+import { NavigationList } from './components/NavigationList'
 
 export const FileNavigator: React.FC = () => {
-  const { currentPath } = useContext(IdeContext)
-
-  const activePath = useCallback(
-    (currentValue: string) => {
-      if (currentValue === currentPath) return `bg-dark-gunmetal font-semibold`
-      return ``
-    },
-    [currentPath]
-  )
+  const { inCode } = useContext(IdeContext)
 
   return (
     <div className="bg-chinese-black-2 min-h-full max-h-max w-1/3 hidden md:flex md:flex-col text-gray-400">
@@ -29,7 +19,7 @@ export const FileNavigator: React.FC = () => {
           Portfolio
         </span>
       </div>
-      <ListFiles />
+      {inCode.value ? <FileList /> : <NavigationList />}
     </div>
   )
 }
