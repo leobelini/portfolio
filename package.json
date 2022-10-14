@@ -18,11 +18,13 @@
     "react-hanger": "^2.4.4",
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0",
+    "react-syntax-highlighter": "^15.5.0",
     "typewriter-effect": "^2.19.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "@types/react-syntax-highlighter": "^15.5.5",
     "@typescript-eslint/eslint-plugin": "^5.30.7",
     "@typescript-eslint/parser": "^5.30.7",
     "@vitejs/plugin-react": "^1.3.0",

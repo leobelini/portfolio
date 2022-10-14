@@ -4,7 +4,7 @@ import { BsEmojiFrown, BsEmojiWink } from 'react-icons/bs'
 
 export const Page404 = () => {
   return (
-    <div className="text-gray-500 text-center">
+    <div className="text-gray-500 text-center px-28 py-10">
       <p className="my-3">
         <RenderLine
           text={

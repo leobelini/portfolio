@@ -4,7 +4,7 @@ import curriculum from '../../assets/curriculum.pdf'
 
 export const Curriculum = () => {
   return (
-    <div className="text-gray-400 text-center">
+    <div className="text-gray-400 text-center px-28 py-10">
       <p className="my-2 font-bold">Se interessou sobre algo?</p>
       <p className="my-2">
         Transfere uma versão resumida das informações para consultar mais tarde:

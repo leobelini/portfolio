@@ -1,4 +1,4 @@
-import { AiTwotoneFolder } from 'react-icons/ai'
+import { AiTwotoneFolder, AiTwotoneFolderOpen } from 'react-icons/ai'
 import axios from 'axios'
 import React, { useCallback, useContext, useEffect } from 'react'
 
@@ -6,6 +6,9 @@ import { IdeContext } from '../IdeContext'
 import { useArray, useBoolean } from 'react-hanger'
 import { FaReact } from 'react-icons/fa'
 import { IsTrue } from '../../isTrue'
+import { Link } from 'react-router-dom'
+
+const removedFiles = ['.pdf', '.jpg', '.png', '.ico']
 
 interface TypeTree {
   path: string
@@ -24,6 +27,7 @@ interface TypeResponseFiles {
 
 interface TypeTreeRefactor {
   name: string
+  sha: string
   prev?: string
   isFolder: boolean
 }
@@ -31,7 +35,7 @@ interface TypeTreeRefactor {
 export const FileList: React.FC = () => {
   const { currentPath } = useContext(IdeContext)
 
-  const files = useArray<{ name: string; prev?: string; isFolder: boolean }>([])
+  const files = useArray<TypeTreeRefactor>([])
 
   const loadFiles = useCallback(async () => {
     const response = await axios.get<TypeResponseFiles>(
@@ -39,13 +43,14 @@ export const FileList: React.FC = () => {
     )
 
     const tree = response.data.tree.reduce<any>((prev, current) => {
-      const isFolder = current.type === 'tree'
-      const currentPath = current.path.split('/').slice(0, -1)
-      const file = current.path.split('/').pop()
+      const isFolder: boolean = current.type === 'tree'
+      const currentPath: string[] = current.path.split('/').slice(0, -1)
+      const file: string | undefined = current.path.split('/').pop()
 
       return [
         ...prev,
         {
+          sha: current.sha,
           name: file,
           prev: currentPath[currentPath.length - 1],
           isFolder,
@@ -55,14 +60,6 @@ export const FileList: React.FC = () => {
 
     files.setValue(tree)
   }, [])
-
-  const activePath = useCallback(
-    (currentValue: string) => {
-      if (currentValue === currentPath) return `bg-dark-gunmetal font-semibold`
-      return ``
-    },
-    [currentPath]
-  )
 
   useEffect(() => {
     loadFiles()
@@ -79,41 +76,64 @@ const RenderFolders: React.FC<{
   fileList: TypeTreeRefactor[]
   currentPath?: string
 }> = ({ fileList, currentPath }) => {
-  const isOpen = useBoolean(false)
   return (
     <ul>
       {fileList
         .filter((p) => p.isFolder && p.prev === currentPath)
         .map((path) => (
-          <React.Fragment key={path.name}>
-            <li className="py-1 pl-4  hover:bg-dark-jungle-green">
-              <button
-                className="flex items-center w-full"
-                onClick={isOpen.toggle}
-              >
-                <AiTwotoneFolder className="mr-2" />
-                {path.name}
-              </button>
-            </li>
-
-            <IsTrue isTrue={isOpen.value}>
-              <li className="py-1 pl-4">
-                <RenderFolders fileList={fileList} currentPath={path.name} />
-              </li>
-            </IsTrue>
-          </React.Fragment>
+          <Folder currentFolder={path} fileList={fileList} key={path.name} />
         ))}
 
       {fileList
         .filter((p) => !p.isFolder && p.prev === currentPath)
+        .filter(
+          (p) =>
+            !removedFiles.some((a) =>
+              p.name.toUpperCase().includes(a.toUpperCase())
+            )
+        )
         .map((file) => (
-          <li className="py-1 pl-4  hover:bg-dark-jungle-green" key={file.name}>
-            <span className="flex items-center">
+          <li
+            className={`py-1 pl-4 hover:bg-dark-jungle-green`}
+            key={file.name}
+          >
+            <Link
+              className="flex items-center"
+              to={`/code/${file.sha}`}
+              title={file.name}
+            >
               <FaReact className="mr-2" />
               {file.name}
-            </span>
+            </Link>
           </li>
         ))}
+    </ul>
+  )
+}
+
+const Folder: React.FC<{
+  fileList: TypeTreeRefactor[]
+  currentFolder: TypeTreeRefactor
+}> = ({ fileList, currentFolder }) => {
+  const isOpen = useBoolean(false)
+  return (
+    <ul>
+      <li className="py-1 pl-4  hover:bg-dark-jungle-green">
+        <button className="flex items-center w-full" onClick={isOpen.toggle}>
+          {isOpen.value ? (
+            <AiTwotoneFolderOpen className="mr-2" />
+          ) : (
+            <AiTwotoneFolder className="mr-2" />
+          )}
+          {currentFolder.name}
+        </button>
+      </li>
+
+      <IsTrue isTrue={isOpen.value}>
+        <li className="py-1 pl-4">
+          <RenderFolders fileList={fileList} currentPath={currentFolder.name} />
+        </li>
+      </IsTrue>
     </ul>
   )
 }
