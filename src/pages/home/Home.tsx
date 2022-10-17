@@ -113,16 +113,19 @@ export const Home = () => {
         <div className="flex flex-1 justify-center items-center mt-5 text-2xl">
           <SocialLink
             Icon={AiOutlineMail}
+            color="text-email-brand"
             href="mailto:leobelini96@gmail.com?subject=Contato pelo site"
           />
           <SocialLink
             Icon={AiOutlineWhatsApp}
+            color="text-whatsapp-brand"
             target="_blank"
             rel="noopener"
             href="https://api.whatsapp.com/send?phone=5514996271006&text=Contato%20pelo%20site"
           />
           <SocialLink
             Icon={AiFillLinkedin}
+            color="text-linkedin-brand"
             rel="noopener"
             href="https://www.linkedin.com/in/leobelini/"
           />
@@ -143,13 +146,15 @@ interface SocialProps
     HTMLAnchorElement
   > {
   Icon: IconType
+  color?: string
 }
 
-const SocialLink: React.FC<SocialProps> = ({ Icon, ...props }) => {
+const SocialLink: React.FC<SocialProps> = ({ Icon, color, ...props }) => {
+  const colorText = color || `text-carmine`
   return (
     <a
       {...props}
-      className="mx-2 cursor-pointer hover:text-carmine transition duration-300 hover:scale-150"
+      className={`mx-2 cursor-pointer hover:${colorText} transition duration-300 hover:scale-150`}
     >
       <Icon />
     </a>

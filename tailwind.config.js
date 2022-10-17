@@ -21,6 +21,9 @@ const colors = {
   'mongodb-brand': '#4DB33D',
   'sql-server-brand': '#A91D22',
   'postgre-sql-brand': '#0064a5',
+  'email-brand': '#4285F4',
+  'whatsapp-brand': '#128C7E',
+  'linkedin-brand': '#0A66C2',
 }
 
 module.exports = {
