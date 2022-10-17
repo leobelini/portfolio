@@ -8,7 +8,7 @@ import { FaReact } from 'react-icons/fa'
 import { IsTrue } from '../../isTrue'
 import { Link } from 'react-router-dom'
 
-const removedFiles = ['.pdf', '.jpg', '.png', '.ico']
+const removedFiles = ['.pdf']
 
 interface TypeTree {
   path: string
@@ -74,6 +74,10 @@ const RenderFolders: React.FC<{
   fileList: TypeTreeRefactor[]
   currentPath?: string
 }> = ({ fileList, currentPath }) => {
+  const getExtension = useCallback((path: string) => {
+    return path.split('.').pop()
+  }, [])
+
   return (
     <ul>
       {fileList
@@ -97,7 +101,7 @@ const RenderFolders: React.FC<{
           >
             <Link
               className="flex items-center"
-              to={`/code/${file.sha}`}
+              to={`/code/${getExtension(file.name)}/${file.sha}`}
               title={file.name}
             >
               <FaReact className="mr-2" />

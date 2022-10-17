@@ -45,7 +45,7 @@ export const Routes: React.FC = () => {
       {listRoutes.map(({ Page, path, key }) => (
         <Route path={path} key={key} element={<Page />} />
       ))}
-      <Route path="/code/:sha" element={<Code />} />
+      <Route path="/code/:extension/:sha" element={<Code />} />
       <Route path="/404" element={<Page404 />} />
       <Route path="*" element={<Navigate replace to="/404" />} />
     </BrowserRoutes>
