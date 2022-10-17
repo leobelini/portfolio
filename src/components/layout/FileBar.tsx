@@ -1,6 +1,5 @@
 import { useContext, useMemo } from 'react'
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
-import { BiCodeAlt } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 
 import { listRoutes } from '../../pages/routes'

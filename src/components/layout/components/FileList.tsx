@@ -33,8 +33,6 @@ interface TypeTreeRefactor {
 }
 
 export const FileList: React.FC = () => {
-  const { currentPath } = useContext(IdeContext)
-
   const files = useArray<TypeTreeRefactor>([])
 
   const loadFiles = useCallback(async () => {

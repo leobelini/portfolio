@@ -1,6 +1,5 @@
 {
-    "autoSave": false,
-  "formatter.prettier.enabled": "true",
-    "excluded": [],
-    "editor.guides": []
+  "autoSave": false,
+  "excluded": [],
+  "editor.guides": []
 }
