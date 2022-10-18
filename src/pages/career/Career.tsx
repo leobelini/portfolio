@@ -2,20 +2,43 @@ import moment from 'moment'
 
 import { FaRobot } from 'react-icons/fa'
 import { ImLab } from 'react-icons/im'
-import { SiSap } from 'react-icons/si'
+import { SiDevdotto, SiNodedotjs, SiSap } from 'react-icons/si'
 import { TimeLineContainer } from '../../components/timeLine'
 import { Time } from './components/Time'
 
 export const Career = () => {
   return (
-    <div className="px-10 py-6 text-slate-50">
+    <div className="text-slate-50 px-28 py-10">
       <TimeLineContainer>
         <Time
-          Icon={FaRobot}
-          title="Roberty"
+          Icon={SiDevdotto}
+          title="Globalsys"
           tag="Atualmente"
           time={{
+            start: moment('01/09/2022', 'DD/MM/YYYY'),
+          }}
+        >
+          Alocado em clientes.
+          <br />
+          Algumas tecnologias utilizadas: <b>Node.js</b> e <b>NestJS</b>.
+        </Time>
+        <Time
+          Icon={FaRobot}
+          title="HighJump"
+          time={{
+            start: moment('01/08/2022', 'DD/MM/YYYY'),
+            end: moment('01/09/2022', 'DD/MM/YYYY'),
+          }}
+        >
+          Desenvolvimento de automações em clientes utilizando a plataforma
+          Roberty.
+        </Time>
+        <Time
+          Icon={SiNodedotjs}
+          title="Roberty"
+          time={{
             start: moment('01/06/2020', 'DD/MM/YYYY'),
+            end: moment('01/08/2022', 'DD/MM/YYYY'),
           }}
         >
           Participação da criação da plataforma de RPA atuando como

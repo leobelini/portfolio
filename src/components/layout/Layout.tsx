@@ -10,9 +10,9 @@ type LayoutProps = {
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <IdeProvider>
-      <div className="w-full h-full drop-shadow-lg">
+      <div className="flex flex-col h-full">
         <TopBar />
-        <div className="flex h-full max-h-full">
+        <div className="flex h-full">
           <FileNavigator />
           <div className="w-full min-h-full max-h-full bg-chinese-black-3 flex flex-col">
             <FileBar />
