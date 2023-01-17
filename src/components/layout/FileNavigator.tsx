@@ -1,13 +1,8 @@
 import { BsChevronDown } from 'react-icons/bs'
-import { useContext } from 'react'
 
-import { IdeContext } from './IdeContext'
-import { FileList } from './components/FileList'
 import { NavigationList } from './components/NavigationList'
 
 export const FileNavigator: React.FC = () => {
-  const { inCode } = useContext(IdeContext)
-
   return (
     <div className="bg-chinese-black-2 min-h-full max-h-max w-1/3 hidden md:flex md:flex-col text-gray-400">
       <div className="px-4 py-2">
@@ -19,7 +14,7 @@ export const FileNavigator: React.FC = () => {
           Portfolio
         </span>
       </div>
-      {inCode.value ? <FileList /> : <NavigationList />}
+      <NavigationList />
     </div>
   )
 }

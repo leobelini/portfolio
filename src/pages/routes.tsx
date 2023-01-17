@@ -4,7 +4,6 @@ import { Navigate, Route, Routes as BrowserRoutes } from 'react-router-dom'
 import { Page404 } from './404'
 import { Academy } from './academy'
 import { Career } from './career'
-import { Code } from './code'
 import { Curriculum } from './curriculum'
 import { Home } from './home'
 
@@ -45,7 +44,6 @@ export const Routes: React.FC = () => {
       {listRoutes.map(({ Page, path, key }) => (
         <Route path={path} key={key} element={<Page />} />
       ))}
-      <Route path="/code/:extension/:sha" element={<Code />} />
       <Route path="/404" element={<Page404 />} />
       <Route path="*" element={<Navigate replace to="/404" />} />
     </BrowserRoutes>

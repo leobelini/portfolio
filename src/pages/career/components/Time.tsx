@@ -24,7 +24,7 @@ export const Time: React.FC<TimeProps> = ({
 }) => {
   const timeText = useMemo(() => {
     const startTime = time.start
-    let endTime = time.end
+    const endTime = time.end
 
     const totalDiffMonth = (endTime || moment()).diff(startTime, 'month', false)
 
