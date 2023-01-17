@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { IconType } from 'react-icons'
 import {
   AiOutlineMail,
@@ -6,48 +6,32 @@ import {
   AiFillLinkedin,
   AiFillGithub,
 } from 'react-icons/ai'
-import { FaNodeJs } from 'react-icons/fa'
-import { RiHtml5Line, RiCss3Line, RiReactjsLine } from 'react-icons/ri'
-import {
-  SiAdonisjs,
-  SiElectron,
-  SiExpress,
-  SiMicrosoftsqlserver,
-  SiMongodb,
-  SiNestjs,
-  SiPostgresql,
-} from 'react-icons/si'
-import { TbBrandJavascript, TbBrandReactNative, TbCSharp } from 'react-icons/tb'
 
 import profile from '../../assets/profile.jpg'
-import { Tooltip } from '../../components/tooltip'
+import profile2 from '../../assets/profile2.png'
+import profile3 from '../../assets/profile3.png'
 
-const listTechnology = [
-  { Icon: RiHtml5Line, name: `HTML5`, color: `text-html-brand` },
-  { Icon: RiCss3Line, name: `CSS3`, color: `text-css-brand` },
-  { Icon: TbBrandJavascript, name: `JavaScript`, color: `text-js-brand` },
-  { Icon: RiReactjsLine, name: `React`, color: `text-react-brand` },
-  {
-    Icon: TbBrandReactNative,
-    name: `React Native`,
-    color: `text-react-native-brand`,
-  },
-  { Icon: FaNodeJs, name: `Node.js`, color: `text-node-brand` },
-  { Icon: SiAdonisjs, name: `AdonisJS`, color: `text-adonis-brand` },
-  { Icon: SiNestjs, name: `Nest.js`, color: `text-nestjs-brand` },
-  { Icon: SiExpress, name: `Express.js`, color: `text-express-brand` },
-  { Icon: SiElectron, name: `Electron`, color: `text-electron-brand` },
-  { Icon: TbCSharp, name: `C#`, color: `text-c-charp-brand` },
-  { Icon: SiMongodb, name: `MongoDB`, color: `text-mongodb-brand` },
-  {
-    Icon: SiMicrosoftsqlserver,
-    name: `SQL Server`,
-    color: `text-sql-server-brand`,
-  },
-  { Icon: SiPostgresql, name: `PostgreSQL`, color: `text-postgre-sql-brand` },
-]
+import { listTechnology } from './listTechnology'
+import { Tooltip } from '../../components/tooltip'
+import { useDebouncedCallback } from '../../hooks'
 
 export const Home = () => {
+  const [showFilters, setShowFilters] = useState(false)
+  const [currentImage, setCurrentImage] = useState(profile)
+  const [totalClicks, setTotalClicks] = useState(0)
+
+  const handleClick = useDebouncedCallback(() => {
+    if (totalClicks >= 10) {
+      setCurrentImage(profile3)
+    } else if (totalClicks >= 5) {
+      setCurrentImage(profile2)
+    } else {
+      setCurrentImage(profile)
+    }
+    setShowFilters(false)
+    setTotalClicks(0)
+  }, 1000)
+
   const greeting = useMemo(() => {
     const hours = new Date().getHours()
     if (hours >= 0 && hours < 12) return `Bom dia`
@@ -60,6 +44,18 @@ export const Home = () => {
     const yearNow = new Date().getFullYear()
     return yearNow - yearInit
   }, [])
+
+  const styleImg: React.CSSProperties = useMemo(() => {
+    let hue = 0
+    let blur = 0
+    if (showFilters) {
+      blur = totalClicks
+      hue = Math.round(Math.random() * 350)
+    }
+    return {
+      filter: `blur(${blur}px) hue-rotate(${hue}deg)`,
+    }
+  }, [totalClicks, showFilters])
 
   return (
     <div className="text-gray-400 grid grid-cols-2 gap-4 px-2 md:px-28 md:py-10">
@@ -93,9 +89,15 @@ export const Home = () => {
       <div className="xl:col-span-1 xl:mt-0 xl:order-2 col-span-2 mt-10 order-1">
         <div className="flex flex-1 justify-center items-center mb-10 flex-col">
           <img
-            src={profile}
+            onClick={() => {
+              setShowFilters(true)
+              setTotalClicks((v) => v + 1)
+              handleClick()
+            }}
+            src={currentImage}
             alt="Foto de perfil de Leonardo Belini"
             className="rounded-full w-40"
+            style={styleImg}
           />
           <div className="text-center mt-6 xl:block hidden">
             <p className="py-2">
