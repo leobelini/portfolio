@@ -62,7 +62,7 @@ export const Home = () => {
   }, [])
 
   return (
-    <div className="text-gray-400 grid grid-cols-2 gap-4 px-28 py-10">
+    <div className="text-gray-400 grid grid-cols-2 gap-4 px-2 md:px-28 md:py-10">
       <div className="xl:col-span-1 xl:order-1 col-span-2 order-2">
         <p className="text-lg my-2">{greeting}, tudo bem?</p>
         <p className="my-2">
