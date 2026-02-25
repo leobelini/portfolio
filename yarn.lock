@@ -378,11 +378,6 @@
   resolved "https://registry.npmjs.org/@fontsource/space-grotesk/-/space-grotesk-5.2.10.tgz"
   integrity sha512-XNXEbT74OIITPqw2H6HXwPDp85fy43uxfBwFR5PU+9sLnjuLj12KlhVM9nZVN6q6dlKjkuN8JisW/OBxwxgUew==
 
-"@fontsource/twinkle-star@^5.2.8":
-  version "5.2.8"
-  resolved "https://registry.npmjs.org/@fontsource/twinkle-star/-/twinkle-star-5.2.8.tgz"
-  integrity sha512-zaurm+x4T/Bl3yO6dZz9hySbH6OUPdDyl9QbP3XYHUj7eZr2ZG64wFyOIhIqdJwc8umUZkWeBa+Q8+A1WIAIGw==
-
 "@img/colour@^1.0.0":
   version "1.0.0"
   resolved "https://registry.npmjs.org/@img/colour/-/colour-1.0.0.tgz"
@@ -563,6 +558,11 @@
   dependencies:
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
+
+"@lucide/astro@^0.575.0":
+  version "0.575.0"
+  resolved "https://registry.yarnpkg.com/@lucide/astro/-/astro-0.575.0.tgz#c87c2c1bfca9729fd45642854a0b01b735ca2dd6"
+  integrity sha512-hU47BbgApVR473CxSk6C4OBxqO0P91ZrY9uYvQB7xqW9f5mqmkz1RJ4jl2iK2LovntrrfAZix5ce+r7v2+2gHg==
 
 "@napi-rs/wasm-runtime@^1.1.1":
   version "1.1.1"
