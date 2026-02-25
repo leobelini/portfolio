@@ -15,4 +15,8 @@
   .primary-text-gradient {
     @apply bg-clip-text text-transparent bg-linear-to-r from-lime-600 to-indigo-600;
   }
+
+  .link {
+    @apply text-lime-500 hover:text-lime-400 transition-colors duration-300;
+  }
 }

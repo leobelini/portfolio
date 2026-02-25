@@ -7,7 +7,7 @@ const currentYear = new Date().getFullYear();
 const experienceYears = currentYear - startCareer;
 ---
 
-<section class="min-h-screen flex items-center relative overflow-hidden px-32 md:px-20" id="#hero">
+<section class="min-h-screen flex items-center relative overflow-hidden px-32 md:px-20" id="hero">
     <div class="max-w-6xl mx-auto w-full gap-12 grid items-center md:gap-12 md:grid-cols-[auto_1fr]">
         <div class="order-2 md:order-1">
             <p class="text-lime-600 text-primary font-medium mb-4 text-lg">Olá, eu sou</p>
@@ -21,7 +21,7 @@ const experienceYears = currentYear - startCareer;
         <div class="flex justify-center order-1 md:order-2">
             <div class="relative">
               <div class="w-64 h-64 md:w-80 md:h-80">                
-                <Image src={ProfileImg} alt="Foto de perfil de Leonardo Belini" class="w-full h-full object-cover" height={320} width={320} />
+                <Image src={ProfileImg} alt="Foto de perfil de Leonardo Belini" class="w-full h-full object-cover" height={320} width={320} loading="eager" />
               </div>
             </div>
         </div>
