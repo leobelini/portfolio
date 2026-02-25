@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import ProfileImg from '../../assets/profile.jpeg';
+import ProfileImg from '../../../assets/profile.jpeg';
 
 const startCareer = 2015;
 const currentYear = new Date().getFullYear();
@@ -11,7 +11,7 @@ const experienceYears = currentYear - startCareer;
     <div class="max-w-6xl mx-auto w-full gap-12 grid items-center md:gap-12 md:grid-cols-[auto_1fr]">
         <div class="order-2 md:order-1">
             <p class="text-lime-600 text-primary font-medium mb-4 text-lg">Olá, eu sou</p>
-            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">Leonardo <br /><span class="bg-clip-text text-transparent bg-linear-to-r from-lime-600 to-indigo-600">Siervo Belini</span></h1>
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">Leonardo <br /><span class="primary-text-gradient">Siervo Belini</span></h1>
             <p class="text-xl text-gray-400 max-w-lg leading-relaxed mb-8">
                 Desenvolvedor Full Stack com {experienceYears} anos de experiência construindo
                 soluções digitais que fazem a diferença.

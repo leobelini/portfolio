@@ -11,4 +11,8 @@
   body {
     @apply bg-background text-foreground font-body antialiased;
   }
+
+  .primary-text-gradient {
+    @apply bg-clip-text text-transparent bg-linear-to-r from-lime-600 to-indigo-600;
+  }
 }
