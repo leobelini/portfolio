@@ -11,8 +11,8 @@ const items = [
 ];
 
 const rightItems = [
-  { icon: Linkedin, href: "https://www.linkedin.com/in/leobelini/" },
-  { icon: Github, href: "https://github.com/leobelini" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/leobelini/", alt: "LinkedIn" },
+  { icon: Github, href: "https://github.com/leobelini", alt: "GitHub" },
 ];
 ---
 
@@ -43,8 +43,9 @@ const rightItems = [
             target="_blank"
             rel="noopener noreferrer"
             class="text-muted-foreground hover:text-primary transition-colors"
+            aria-label={item.alt}
           >
-            <item.icon size={18} />
+            <item.icon size={18} aria-label={item.alt} />
           </a>
         ))
       }
