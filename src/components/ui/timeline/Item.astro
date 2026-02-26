@@ -5,14 +5,14 @@ const isEven = index % 2 === 0;
 
 const classItem = !isEven
   ? "md:direction-ltr text-left"
-  : "md:direction-rtl text-right";
+  : "md:direction-rtl text-left md:text-right";
 
 const classContainer = isEven
   ? "pl-8 md:pl-0 md:pr-12"
   : "pl-8 md:col-start-2 md:pl-12";
 
 
-const classTitle = !isEven ? "text-left" : "text-right";
+const classTitle = !isEven ? "text-left" : "text-left md:text-right";
 
 ---
 

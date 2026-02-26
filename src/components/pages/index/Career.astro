@@ -2,36 +2,16 @@
 import { formatDateRange } from "../../../utils/timeline";
 import Container from "../../ui/timeline/Container.astro";
 import Item from "../../ui/timeline/Item.astro";
+import timelineData from "../../../data/timeline.json";
+import type { TimelineItem } from "../../../types/time-line-item";
 
-type TimelineItem = {
-  title: string;
+const timeline: TimelineItem[] = timelineData.map((item) => ({
+  ...item,
   date: {
-    start: Date;
-    end: Date | null; // null indica que ainda está ativo
-  };
-  description: string;
-};
-
-const timeline: TimelineItem[] = [
-  {
-    title: "Globalsys",
-    date: {
-      start: new Date("2022-10-01"),
-      end: null,
-    },
-    description:
-      "Alocado em clientes, atuando fortemente com React/TypeScript com Vite e Next.js. Projetos de médio e grande porte, com times de até 20 pessoas. Desenvolvimento de aplicações web, consumindo APIs REST. Participação ativa em todas as fases do ciclo de desenvolvimento, desde a concepção até a entrega e manutenção.",
+    start: new Date(item.date.start),
+    end: item.date.end ? new Date(item.date.end) : null,
   },
-  {
-    title: "HighJump",
-    date: {
-      start: new Date("2022-09-01"),
-      end: new Date("2022-10-01"),
-    },
-    description:
-      "Desenvolvimento de automações em clientes utilizando a plataforma Roberty.",
-  },
-];
+}));
 ---
 
 <div class="flex flex-col items-center">
@@ -42,7 +22,7 @@ const timeline: TimelineItem[] = [
 </div>
 
 <section
-  class="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-32 md:px-20"
+  class="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-32 md:px-20 my-20"
   id="career"
 >
   <div class="max-w-6xl mx-auto w-full flex flex-col">
@@ -67,10 +47,8 @@ const timeline: TimelineItem[] = [
               </span>
             )}
           </h3>
-          <p slot="date">
-            {formatDateRange(item.date.start, item.date.end)}
-          </p>
-          <p slot="description">{item.description}</p>
+          <p slot="date">{formatDateRange(item.date.start, item.date.end)}</p>
+          <div slot="description" set:html={item.description} />
         </Item>
       ))
     }
