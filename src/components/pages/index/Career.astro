@@ -1,0 +1,78 @@
+---
+import { formatDateRange } from "../../../utils/timeline";
+import Container from "../../ui/timeline/Container.astro";
+import Item from "../../ui/timeline/Item.astro";
+
+type TimelineItem = {
+  title: string;
+  date: {
+    start: Date;
+    end: Date | null; // null indica que ainda está ativo
+  };
+  description: string;
+};
+
+const timeline: TimelineItem[] = [
+  {
+    title: "Globalsys",
+    date: {
+      start: new Date("2022-10-01"),
+      end: null,
+    },
+    description:
+      "Alocado em clientes, atuando fortemente com React/TypeScript com Vite e Next.js. Projetos de médio e grande porte, com times de até 20 pessoas. Desenvolvimento de aplicações web, consumindo APIs REST. Participação ativa em todas as fases do ciclo de desenvolvimento, desde a concepção até a entrega e manutenção.",
+  },
+  {
+    title: "HighJump",
+    date: {
+      start: new Date("2022-09-01"),
+      end: new Date("2022-10-01"),
+    },
+    description:
+      "Desenvolvimento de automações em clientes utilizando a plataforma Roberty.",
+  },
+];
+---
+
+<div class="flex flex-col items-center">
+  <div
+    class="h-px w-5/6 bg-indigo-900 mask-alpha mask-r-from-black mask-r-from-80% mask-r-to-transparent mask-l-from-black mask-l-from-80% mask-l-to-transparent"
+  >
+  </div>
+</div>
+
+<section
+  class="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-32 md:px-20"
+  id="career"
+>
+  <div class="max-w-6xl mx-auto w-full flex flex-col">
+    <p class="text-lime-600 text-primary font-medium mb-4 text-lg">
+      Trajetória
+    </p>
+    <h2 class="text-2xl md:text-4xl font-bold tracking-tight mb-6">
+      Experiência
+      <span class="primary-text-gradient">profissional</span>
+    </h2>
+  </div>
+
+  <Container>
+    {
+      timeline.map((item, index) => (
+        <Item index={index}>
+          <h3 slot="title">
+            {item.title}
+            {item.date.end === null && (
+              <span class="text-sm font-normal bg-indigo-800 px-2 py-0.5 rounded-md">
+                Atual
+              </span>
+            )}
+          </h3>
+          <p slot="date">
+            {formatDateRange(item.date.start, item.date.end)}
+          </p>
+          <p slot="description">{item.description}</p>
+        </Item>
+      ))
+    }
+  </Container>
+</section>
