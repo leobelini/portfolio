@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Globalsys",
+    "date": {
+      "start": "2022-10-01",
+      "end": null
+    },
+    "description": "Alocado em clientes, atuando fortemente com React/TypeScript com Vite e Next.js. Projetos de médio e grande porte, com times de até 20 pessoas. Desenvolvimento de aplicações web, consumindo APIs REST. Participação ativa em todas as fases do ciclo de desenvolvimento, desde a concepção até a entrega e manutenção."
+  },
+  {
+    "title": "HighJump",
+    "date": {
+      "start": "2022-09-01",
+      "end": "2022-10-01"
+    },
+    "description": "Desenvolvimento de automações em clientes utilizando a plataforma <a href=\"https://www.roberty.app/\" target=\"_blank\" rel=\"noopener noreferrer\">Roberty</a>."
+  },
+  {
+    "title": "Roberty",
+    "date": {
+      "start": "2020-07-01",
+      "end": "2022-09-01"
+    },
+    "description": "Participação na criação da plataforma de RPA como desenvolvedor full stack. Automações de processos, interfaces, APIs e comunicações em real time."
+  },
+  {
+    "title": "Laboratório Sodré",
+    "date": {
+      "start": "2017-11-01",
+      "end": "2020-07-01"
+    },
+    "description": "Desenvolvimento de sistema laboratorial completo. Módulos de atendimento, ocorrência, logística. Integrações com balanças e impressoras." 
+  },
+  {
+    "title": "Iteam",
+    "date": {
+      "start": "2015-11-01",
+      "end": "2017-10-01"
+    },
+    "description": "Desenvolvimento de sistema laboratorial completo. Módulos de atendimento, ocorrência, logística. Integrações com balanças e impressoras." 
+  }
+]
