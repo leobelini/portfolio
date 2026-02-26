@@ -1,0 +1,35 @@
+---
+const { index } = Astro.props;
+
+const isEven = index % 2 === 0;
+
+const classItem = !isEven
+  ? "md:direction-ltr text-left"
+  : "md:direction-rtl text-right";
+
+const classContainer = isEven
+  ? "pl-8 md:pl-0 md:pr-12"
+  : "pl-8 md:col-start-2 md:pl-12";
+
+
+const classTitle = !isEven ? "text-left" : "text-right";
+
+---
+
+<div class={`relative grid md:grid-cols-2 gap-4 md:gap-12 ${classItem}`}>
+  <div
+    class="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-1.5 w-4 h-4 rounded-full border-2 border-primary bg-background z-10"
+  >
+  </div>
+  <div class={classContainer}>
+    <!-- <div class="flex items-center gap-3 mb-3 flex-wrap"> -->
+      <div class={`text-xl font-bold text-foreground flex flex-col gap-2 mb-3 ${classTitle}`}>
+        <slot name="title" />
+      <!-- </div> -->
+    </div><div class="text-sm text-muted-foreground mb-2">
+      <slot name="date" />
+    </div><div class="text-muted-foreground leading-relaxed">
+      <slot name="description" />
+    </div>
+  </div>
+</div>
