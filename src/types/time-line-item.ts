@@ -5,5 +5,6 @@ export type TimelineItem = {
     end: Date | null; // null indica que ainda está ativo
   };
   description: string; // aceita HTML
+  tags?: string[]; // array de tags para tecnologias ou habilidades
 };
 
