@@ -17,8 +17,11 @@ import { experienceYears } from '../../../data/career';
         
         <div class="flex justify-center order-1 md:order-2">
             <div class="relative">
-              <div class="w-64 h-64 md:w-80 md:h-80">                
-                <Image src={ProfileImg} alt="Foto de perfil de Leonardo Belini" class="w-full h-full object-cover" height={320} width={320} loading="eager" />
+              <div class="blob-container">
+                <div class="blob-shape">
+                  <Image src={ProfileImg} alt="Foto de perfil de Leonardo Belini" class="blob-image" height={320} width={320} loading="eager" />
+                </div>
+                <div class="blob-glow"></div>
               </div>
             </div>
         </div>
