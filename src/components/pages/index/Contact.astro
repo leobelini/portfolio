@@ -11,6 +11,7 @@ import { formatEducationDate } from "../../../utils/date.ts";
 <section
   class="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-32 md:px-20 py-20 bg-gray-900"
   id="contact"
+  aria-label="Contato"
 >
   <TitleSection subtitleClass="text-center" titleClass="text-center" highlightClass="text-center">
     <span slot="subtitle">Contato</span>
@@ -20,18 +21,18 @@ import { formatEducationDate } from "../../../utils/date.ts";
   <p class="text-center">Se interessou? Entre em contato por qualquer um dos canais abaixo.</p>
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto w-full mt-4">
-    <a href="mailto:leobelini96@gmail.com" class="flex items-center gap-2 flex-col text-lime-600 hover:text-lime-400 transition-colors duration-300 bg-gray-800 p-8 rounded-lg">
-      <Mail class="h-8 w-8" />
+    <a href="mailto:leobelini96@gmail.com" class="flex items-center gap-2 flex-col text-lime-600 hover:text-lime-400 transition-colors duration-300 bg-gray-800 p-8 rounded-lg" aria-label="Enviar e-mail para Leonardo Belini">
+      <Mail class="h-8 w-8" aria-hidden="true" />
       <span class="text-lg font-medium">E-mail</span>
     </a>
 
-     <a href="https://wa.me/5514996271006" class="flex items-center gap-2 flex-col text-lime-600 hover:text-lime-400 transition-colors duration-300 bg-gray-800 p-8 rounded-lg">
-      <MessageCircle class="h-8 w-8" />
+     <a href="https://wa.me/5514996271006" class="flex items-center gap-2 flex-col text-lime-600 hover:text-lime-400 transition-colors duration-300 bg-gray-800 p-8 rounded-lg" aria-label="Enviar mensagem no WhatsApp" rel="noopener noreferrer">
+      <MessageCircle class="h-8 w-8" aria-hidden="true" />
       <span class="text-lg font-medium">WhatsApp</span>
     </a>
 
-    <a href="https://www.linkedin.com/in/leobelini/" target="_blank" class="flex items-center gap-2 flex-col text-lime-600 hover:text-lime-400 transition-colors duration-300 bg-gray-800 p-8 rounded-lg">
-      <Linkedin class="h-8 w-8" />
+    <a href="https://www.linkedin.com/in/leobelini/" target="_blank" class="flex items-center gap-2 flex-col text-lime-600 hover:text-lime-400 transition-colors duration-300 bg-gray-800 p-8 rounded-lg" aria-label="Perfil de Leonardo Belini no LinkedIn" rel="noopener noreferrer">
+      <Linkedin class="h-8 w-8" aria-hidden="true" />
       <span class="text-lg font-medium">LinkedIn</span>
     </a>
   </div>
