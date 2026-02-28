@@ -1,0 +1,40 @@
+---
+import Divider from "../../ui/Divider.astro";
+import TitleSection from "../../ui/TitleSection.astro";
+import { Mail, MessageCircle, Linkedin } from "@lucide/astro";
+import educationsData from "../../../data/educations.json";
+import { formatEducationDate } from "../../../utils/date.ts";
+---
+
+<Divider />
+
+<section
+  class="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-32 md:px-20 py-20 bg-gray-900"
+  id="contact"
+>
+  <TitleSection subtitleClass="text-center" titleClass="text-center" highlightClass="text-center">
+    <span slot="subtitle">Contato</span>
+    <span slot="title">Vamos </span>
+    <span slot="highlight">conversar?</span>
+  </TitleSection>
+  <p class="text-center">Se interessou? Entre em contato por qualquer um dos canais abaixo.</p>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto w-full mt-4">
+    <a href="mailto:leobelini96@gmail.com" class="flex items-center gap-2 flex-col text-lime-600 hover:text-lime-400 transition-colors duration-300 bg-gray-800 p-8 rounded-lg">
+      <Mail class="h-8 w-8" />
+      <span class="text-lg font-medium">E-mail</span>
+    </a>
+
+     <a href="https://wa.me/5514996271006" class="flex items-center gap-2 flex-col text-lime-600 hover:text-lime-400 transition-colors duration-300 bg-gray-800 p-8 rounded-lg">
+      <MessageCircle class="h-8 w-8" />
+      <span class="text-lg font-medium">WhatsApp</span>
+    </a>
+
+    <a href="https://www.linkedin.com/in/leobelini/" target="_blank" class="flex items-center gap-2 flex-col text-lime-600 hover:text-lime-400 transition-colors duration-300 bg-gray-800 p-8 rounded-lg">
+      <Linkedin class="h-8 w-8" />
+      <span class="text-lg font-medium">LinkedIn</span>
+    </a>
+  </div>
+  
+
+</section>
