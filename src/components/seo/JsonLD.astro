@@ -1,0 +1,120 @@
+---
+import { experienceYears } from "../../data/career";
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Leonardo Siervo Belini",
+  url: "https://lsbelini.dev",
+  image: "https://lsbelini.dev/og-image.png",
+  jobTitle: "Desenvolvedor Full Stack",
+  description: `Desenvolvedor Full Stack com mais de ${experienceYears} anos de experiência em React, TypeScript, Node.js, NestJS e GoLang.`,
+  email: "leobelini96@gmail.com",
+  telephone: "+5514996271006",
+  sameAs: [
+    "https://www.linkedin.com/in/leobelini/",
+    "https://github.com/leobelini",
+  ],
+  knowsAbout: [
+    "React",
+    "TypeScript",
+    "Node.js",
+    "NestJS",
+    "GoLang",
+    "JavaScript",
+    "Full Stack Development",
+    "Clean Architecture",
+    "TDD",
+    "REST API",
+    "Next.js",
+    "Electron",
+    "MongoDB"
+  ],
+  alumniOf: [
+    {
+      "@type": "EducationalOrganization",
+      name: "Unilins",
+      description: "Tecnólogo em Análise e Desenvolvimento",
+    },
+    {
+      "@type": "EducationalOrganization",
+      name: "ETEC",
+      description: "Técnico em Informática para WEB",
+    },
+    {
+      "@type": "EducationalOrganization",
+      name: "Branas.io",
+      description: "Clean Code e Clean Architecture",
+    },
+  ],
+  worksFor: {
+    "@type": "Organization",
+    name: "Globalsys",
+    url: "https://www.globalsys.com.br/",
+  },
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Leonardo Belini | Portfolio",
+  url: "https://lsbelini.dev",
+  description:
+    "Portfolio profissional de Leonardo Siervo Belini, Desenvolvedor Full Stack.",
+  author: {
+    "@type": "Person",
+    name: "Leonardo Siervo Belini",
+  },
+  inLanguage: "pt-BR",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Início",
+      item: "https://lsbelini.dev",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Sobre",
+      item: "https://lsbelini.dev/#about",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Carreira",
+      item: "https://lsbelini.dev/#career",
+    },
+    {
+      "@type": "ListItem",
+      position: 4,
+      name: "Formação",
+      item: "https://lsbelini.dev/#education",
+    },
+    {
+      "@type": "ListItem",
+      position: 5,
+      name: "Contato",
+      item: "https://lsbelini.dev/#contact",
+    },
+  ],
+};
+---
+
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(personSchema)}
+/>
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(websiteSchema)}
+/>
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(breadcrumbSchema)}
+/>
