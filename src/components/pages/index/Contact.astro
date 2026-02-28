@@ -2,8 +2,6 @@
 import Divider from "../../ui/Divider.astro";
 import TitleSection from "../../ui/TitleSection.astro";
 import { Mail, MessageCircle, Linkedin } from "@lucide/astro";
-import educationsData from "../../../data/educations.json";
-import { formatEducationDate } from "../../../utils/date.ts";
 ---
 
 <Divider />
@@ -13,6 +11,9 @@ import { formatEducationDate } from "../../../utils/date.ts";
   id="contact"
   aria-label="Contato"
 >
+    <div class="hero-light hero-light-1" aria-hidden="true"></div>
+    <div class="hero-light hero-light-2" aria-hidden="true"></div>
+    <div class="hero-light hero-light-3" aria-hidden="true"></div>
   <TitleSection subtitleClass="text-center" titleClass="text-center" highlightClass="text-center">
     <span slot="subtitle">Contato</span>
     <span slot="title">Vamos </span>
