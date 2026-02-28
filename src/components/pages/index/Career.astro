@@ -4,6 +4,7 @@ import Container from "../../ui/timeline/Container.astro";
 import Item from "../../ui/timeline/Item.astro";
 import timelineData from "../../../data/timeline.json";
 import type { TimelineItem } from "../../../types/time-line-item";
+import Tag from "../../ui/Tag.astro";
 
 const timeline: TimelineItem[] = timelineData.map((item) => ({
   ...item,
@@ -49,6 +50,9 @@ const timeline: TimelineItem[] = timelineData.map((item) => ({
           </h3>
           <p slot="date">{formatDateRange(item.date.start, item.date.end)}</p>
           <div slot="description" set:html={item.description} />
+          {item?.tags?.map((tag) => (
+            <Tag slot="tags" class="text-sm">{tag}</Tag>
+          ))}
         </Item>
       ))
     }
