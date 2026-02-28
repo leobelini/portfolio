@@ -6,20 +6,20 @@ interface Props {
   description?: string;
   canonicalURL?: string;
   ogImage?: string;
-  ogType?: "website" | "article" | "profile";
+  ogType?: 'website' | 'article' | 'profile';
   noindex?: boolean;
 }
 
 const {
-  title = "Leonardo Belini | Desenvolvedor Full Stack",
+  title = 'Leonardo Belini | Desenvolvedor Full Stack',
   description = `Portfolio de Leonardo Siervo Belini — Desenvolvedor Full Stack com mais de ${experienceYears} anos de experiência em React, TypeScript, Node.js, NestJS e GoLang. Soluções digitais de alto impacto.`,
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
-  ogImage = new URL("/og-image.png", Astro.site).href,
-  ogType = "website",
+  ogImage = new URL('/og-image.png', Astro.site).href,
+  ogType = 'website',
   noindex = false,
 } = Astro.props;
 
-const siteName = "Leonardo Belini";
+const siteName = 'Leonardo Belini';
 ---
 
 <!-- Primary Meta Tags -->
@@ -36,11 +36,16 @@ const siteName = "Leonardo Belini";
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Robots -->
-{noindex ? (
-  <meta name="robots" content="noindex, nofollow" />
-) : (
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-)}
+{
+  noindex ? (
+    <meta name="robots" content="noindex, nofollow" />
+  ) : (
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+  )
+}
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={ogType} />

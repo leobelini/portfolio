@@ -24,16 +24,7 @@
       "end": "2022-09-01"
     },
     "description": "Participação na criação da plataforma de RPA como desenvolvedor full stack. Automações de processos, interfaces, APIs e comunicações em real time.",
-    "tags": [
-      "Node.js",
-      "React",
-      "Electron",
-      "MongoDB",
-      "Typescript",
-      "C#",
-      "Python",
-      "WebSocket"
-    ]
+    "tags": ["Node.js", "React", "Electron", "MongoDB", "Typescript", "C#", "Python", "WebSocket"]
   },
   {
     "title": "Laboratório Sodré",
@@ -42,15 +33,7 @@
       "end": "2020-07-01"
     },
     "description": "Desenvolvimento de sistema laboratorial completo. Módulos de atendimento, ocorrência, logística. Integrações com balanças e impressoras.",
-    "tags": [
-      "C# MVC",
-      "Node.js",
-      "React",
-      "SQL Server",
-      "JQuery",
-      "Electron",
-      "React Native"
-    ]
+    "tags": ["C# MVC", "Node.js", "React", "SQL Server", "JQuery", "Electron", "React Native"]
   },
   {
     "title": "Iteam",

@@ -1,12 +1,12 @@
 ---
-import { formatDateRange } from "../../../utils/timeline";
-import Container from "../../ui/timeline/Container.astro";
-import Item from "../../ui/timeline/Item.astro";
-import timelineData from "../../../data/timeline.json";
-import type { TimelineItem } from "../../../types/time-line-item";
-import Tag from "../../ui/Tag.astro";
-import Divider from "../../ui/Divider.astro";
-import TitleSection from "../../ui/TitleSection.astro";
+import { formatDateRange } from '../../../utils/timeline';
+import Container from '../../ui/timeline/Container.astro';
+import Item from '../../ui/timeline/Item.astro';
+import timelineData from '../../../data/timeline.json';
+import type { TimelineItem } from '../../../types/time-line-item';
+import Tag from '../../ui/Tag.astro';
+import Divider from '../../ui/Divider.astro';
+import TitleSection from '../../ui/TitleSection.astro';
 
 const timeline: TimelineItem[] = timelineData.map((item) => ({
   ...item,
@@ -20,11 +20,11 @@ const timeline: TimelineItem[] = timelineData.map((item) => ({
 <Divider />
 
 <section
-  class="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-32 md:px-20 py-20 bg-gray-900"
+  class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gray-900 px-32 py-20 md:px-20"
   id="career"
   aria-label="Experiência profissional"
 >
-    <div class="hero-light hero-light-2" aria-hidden="true"></div>
+  <div class="hero-light hero-light-2" aria-hidden="true"></div>
 
   <TitleSection>
     <span slot="subtitle">Trajetória</span>
@@ -39,9 +39,7 @@ const timeline: TimelineItem[] = timelineData.map((item) => ({
           <h3 slot="title">
             {item.title}
             {item.date.end === null && (
-              <span class="text-sm font-normal bg-indigo-800 px-2 py-0.5 rounded-md">
-                Atual
-              </span>
+              <span class="rounded-md bg-indigo-800 px-2 py-0.5 text-sm font-normal">Atual</span>
             )}
           </h3>
           <p slot="date">{formatDateRange(item.date.start, item.date.end)}</p>

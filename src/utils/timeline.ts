@@ -1,5 +1,4 @@
-import { formatDate } from "./date";
-
+import { formatDate } from './date';
 
 const calculateDateDifference = (startDate: Date, endDate: Date) => {
   let years = endDate.getFullYear() - startDate.getFullYear();
@@ -18,8 +17,8 @@ const calculateDateDifference = (startDate: Date, endDate: Date) => {
     }
   }
 
-  const yearText = years === 1 ? "ano" : "anos";
-  const monthText = months === 1 || months === 0 ? "mês" : "meses";
+  const yearText = years === 1 ? 'ano' : 'anos';
+  const monthText = months === 1 || months === 0 ? 'mês' : 'meses';
 
   if (years > 0 && months > 0) {
     return `${years} ${yearText} e ${months} ${monthText}`;
@@ -31,7 +30,7 @@ const calculateDateDifference = (startDate: Date, endDate: Date) => {
 };
 
 export const formatDateRange = (start: Date, end: Date | null): string => {
-    const rangeDiff = calculateDateDifference(start, end || new Date());
+  const rangeDiff = calculateDateDifference(start, end || new Date());
   if (!end) return `${formatDate(start)} - Presente (${rangeDiff})`;
 
   return `${formatDate(start)} - ${formatDate(end)} (${rangeDiff})`;

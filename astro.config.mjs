@@ -8,6 +8,6 @@ export default defineConfig({
   site: 'https://lsbelini.dev',
   integrations: [sitemap()],
   vite: {
-    plugins: [tailwindcss()]
-  }
+    plugins: [tailwindcss()],
+  },
 });

@@ -1,9 +1,9 @@
 export const formatDate = (date: Date) => {
   const options: Intl.DateTimeFormatOptions = {
-    year: "numeric",
-    month: "short",
+    year: 'numeric',
+    month: 'short',
   };
-  return date.toLocaleDateString("pt-BR", options);
+  return date.toLocaleDateString('pt-BR', options);
 };
 
 interface DateRange {
@@ -13,7 +13,7 @@ interface DateRange {
 
 export function formatEducationDate(date: DateRange | null): string {
   if (!date) {
-    return "";
+    return '';
   }
 
   const startYear = date.start ? new Date(date.start).getFullYear().toString() : null;
@@ -27,5 +27,5 @@ export function formatEducationDate(date: DateRange | null): string {
     return startYear;
   }
 
-  return "";
+  return '';
 }

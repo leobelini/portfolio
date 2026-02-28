@@ -7,4 +7,3 @@ export type TimelineItem = {
   description: string; // aceita HTML
   tags?: string[]; // array de tags para tecnologias ou habilidades
 };
-

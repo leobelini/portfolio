@@ -1,10 +1,10 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --color-background: hsl(220 20% 10%);
   --color-foreground: hsl(220 10% 88%);
-  
-  --font-body: "Space Grotesk", system-ui, -apple-system, sans-serif;
+
+  --font-body: 'Space Grotesk', system-ui, -apple-system, sans-serif;
 }
 
 @layer base {
@@ -13,11 +13,11 @@
   }
 
   .primary-text-gradient {
-    @apply bg-clip-text text-transparent bg-linear-to-r from-lime-600 to-indigo-600;
+    @apply bg-linear-to-r from-lime-600 to-indigo-600 bg-clip-text text-transparent;
   }
 
   .link {
-    @apply text-lime-500 hover:text-lime-400 transition-colors duration-300;
+    @apply text-lime-500 transition-colors duration-300 hover:text-lime-400;
   }
 }
 
@@ -61,24 +61,51 @@
 }
 
 @keyframes float-light-1 {
-  0%, 100% { transform: translate(0, 0); }
-  25% { transform: translate(60px, 40px); }
-  50% { transform: translate(20px, -30px); }
-  75% { transform: translate(-40px, 20px); }
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(60px, 40px);
+  }
+  50% {
+    transform: translate(20px, -30px);
+  }
+  75% {
+    transform: translate(-40px, 20px);
+  }
 }
 
 @keyframes float-light-2 {
-  0%, 100% { transform: translate(0, 0); }
-  25% { transform: translate(-50px, -30px); }
-  50% { transform: translate(30px, 50px); }
-  75% { transform: translate(40px, -40px); }
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-50px, -30px);
+  }
+  50% {
+    transform: translate(30px, 50px);
+  }
+  75% {
+    transform: translate(40px, -40px);
+  }
 }
 
 @keyframes float-light-3 {
-  0%, 100% { transform: translate(-50%, -50%); }
-  25% { transform: translate(calc(-50% + 40px), calc(-50% - 50px)); }
-  50% { transform: translate(calc(-50% - 30px), calc(-50% + 30px)); }
-  75% { transform: translate(calc(-50% + 50px), calc(-50% + 40px)); }
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+  25% {
+    transform: translate(calc(-50% + 40px), calc(-50% - 50px));
+  }
+  50% {
+    transform: translate(calc(-50% - 30px), calc(-50% + 30px));
+  }
+  75% {
+    transform: translate(calc(-50% + 50px), calc(-50% + 40px));
+  }
 }
 
 /* Blob morphing animation */
