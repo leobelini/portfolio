@@ -1,0 +1,21 @@
+<div class="max-w-6xl mx-auto w-full flex flex-col">
+  {
+    Astro.slots.has("subtitle") && (
+      <p class="text-lime-600 text-primary font-medium mb-4 text-lg">
+        <slot name="subtitle" />
+      </p>
+    )
+  }
+  {
+    Astro.slots.has("title") && (
+      <h2 class="text-2xl md:text-4xl font-bold tracking-tight mb-6">
+        <slot name="title" />
+        {Astro.slots.has("highlight") && (
+          <span class="primary-text-gradient">
+            <slot name="highlight" />
+          </span>
+        )}
+      </h2>
+    )
+  }
+</div>
