@@ -1,4 +1,6 @@
 ---
+import Tag from "../../ui/Tag.astro";
+
 const technologies = ["React", "TypeScript", "Node.js", "NestJS", "GoLang"];
 ---
 
@@ -48,13 +50,7 @@ const technologies = ["React", "TypeScript", "Node.js", "NestJS", "GoLang"];
     </div>
 
     <div class="flex justify-center gap-4 flex-wrap">
-      {
-        technologies.map((tech) => (
-          <span class="px-4 py-2 bg-gray-800 text-neutral-200 rounded-lg font-medium hover:bg-gray-700 transition-colors duration-300">
-            {tech}
-          </span>
-        ))
-      }
+      {technologies.map((tech) => <Tag>{tech}</Tag>)}
     </div>
   </div>
 </section>
