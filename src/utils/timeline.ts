@@ -1,10 +1,5 @@
-const formatDate = (date: Date) => {
-  const options: Intl.DateTimeFormatOptions = {
-    year: "numeric",
-    month: "short",
-  };
-  return date.toLocaleDateString("pt-BR", options);
-};
+import { formatDate } from "./date";
+
 
 const calculateDateDifference = (startDate: Date, endDate: Date) => {
   let years = endDate.getFullYear() - startDate.getFullYear();
