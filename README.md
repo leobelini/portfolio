@@ -1,46 +1,88 @@
-# Astro Starter Kit: Basics
+# 🌐 Leonardo Belini — Portfolio
 
-```sh
-npm create astro@latest -- --template basics
+Portfolio pessoal desenvolvido com **Astro**, **Tailwind CSS v4** e **TypeScript**.
+
+🔗 **Live:** [lsbelini.dev](https://lsbelini.dev)
+
+---
+
+## ✨ Sobre
+
+Site pessoal e portfolio de **Leonardo Siervo Belini** — Desenvolvedor Full Stack com mais de 10 anos de experiência em diversas tecnologias, desde frontend até backend, mobile e desktop.
+
+### Seções
+
+- **Hero** — Apresentação com foto e introdução
+- **Sobre mim** — Resumo profissional e tecnologias principais
+- **Carreira** — Timeline com experiências profissionais
+- **Educação** — Formação acadêmica
+- **Contato** — Informações de contato
+
+---
+
+## 🛠️ Tech Stack
+
+| Categoria        | Tecnologia                                                              |
+| :--------------- | :---------------------------------------------------------------------- |
+| Framework        | [Astro 5](https://astro.build/)                                         |
+| Estilização      | [Tailwind CSS v4](https://tailwindcss.com/)                             |
+| Linguagem        | [TypeScript](https://www.typescriptlang.org/)                           |
+| Ícones           | [Lucide](https://lucide.dev/)                                           |
+| Fonte            | [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk)        |
+| SEO              | Sitemap, Open Graph, JSON-LD, meta tags                                 |
+| Linting          | ESLint + Prettier                                                       |
+
+---
+
+## 📁 Estrutura do Projeto
+
+```
+src/
+├── assets/              # Imagens e assets estáticos
+├── components/
+│   ├── pages/index/     # Componentes de cada seção da página
+│   ├── seo/             # SEO Head e JSON-LD
+│   └── ui/              # Componentes reutilizáveis (Tag, Divider, Timeline...)
+├── data/                # Dados estruturados (carreira, educação, timeline)
+├── layouts/             # Layouts base
+├── pages/               # Rotas (index.astro)
+├── styles/              # CSS global e tema
+├── types/               # Tipos TypeScript
+└── utils/               # Funções utilitárias
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-## 🚀 Project Structure
+## 🚀 Começando
 
-Inside of your Astro project, you'll see the following folders and files:
+### Pré-requisitos
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+- [Node.js](https://nodejs.org/) >= 18
+
+### Instalação
+
+```bash
+# Clone o repositório
+git clone https://github.com/lsbelini/portfolio.git
+cd portfolio
+
+# Instale as dependências
+npm install
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+### Comandos
 
-## 🧞 Commands
+| Comando              | Ação                                                     |
+| :------------------- | :------------------------------------------------------- |
+| `npm run dev`        | Inicia o servidor de desenvolvimento em `localhost:4321`  |
+| `npm run build`      | Gera o build de produção em `./dist/`                    |
+| `npm run preview`    | Pré-visualiza o build localmente                         |
+| `npm run lint`       | Verifica erros de linting                                |
+| `npm run lint:fix`   | Corrige erros de linting automaticamente                 |
+| `npm run format`     | Formata o código com Prettier                            |
 
-All commands are run from the root of the project, from a terminal:
+---
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 📄 Licença
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Este projeto é de uso pessoal. Sinta-se livre para usar como referência ou inspiração.
