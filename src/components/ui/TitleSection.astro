@@ -1,0 +1,39 @@
+---
+interface Props {
+  subtitleClass?: string;
+  titleClass?: string;
+  highlightClass?: string;
+}
+
+const { subtitleClass = '', titleClass = '', highlightClass = '' } = Astro.props;
+
+const baseSubtitleClass = 'text-lime-600 text-primary font-medium mb-4 text-lg';
+const baseTitleClass = 'text-2xl md:text-4xl font-bold tracking-tight mb-6';
+const baseHighlightClass = 'primary-text-gradient';
+
+const finalSubtitleClass = `${baseSubtitleClass} ${subtitleClass}`.trim();
+const finalTitleClass = `${baseTitleClass} ${titleClass}`.trim();
+const finalHighlightClass = `${baseHighlightClass} ${highlightClass}`.trim();
+---
+
+<div class="mx-auto flex w-full max-w-6xl flex-col">
+  {
+    Astro.slots.has('subtitle') && (
+      <p class={finalSubtitleClass}>
+        <slot name="subtitle" />
+      </p>
+    )
+  }
+  {
+    Astro.slots.has('title') && (
+      <h2 class={finalTitleClass}>
+        <slot name="title" />
+        {Astro.slots.has('highlight') && (
+          <span class={finalHighlightClass}>
+            <slot name="highlight" />
+          </span>
+        )}
+      </h2>
+    )
+  }
+</div>

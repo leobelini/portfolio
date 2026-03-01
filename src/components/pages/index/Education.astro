@@ -1,0 +1,41 @@
+---
+import Divider from '../../ui/Divider.astro';
+import TitleSection from '../../ui/TitleSection.astro';
+import educationsData from '../../../data/educations.json';
+import { GraduationCap } from '@lucide/astro';
+import { formatEducationDate } from '../../../utils/date.ts';
+---
+
+<Divider />
+
+<section
+  class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-32 py-20 md:px-20"
+  id="education"
+  aria-label="Educação e cursos"
+>
+  <TitleSection>
+    <span slot="subtitle">Formação</span>
+    <span slot="title">Educação e </span>
+    <span slot="highlight">cursos</span>
+  </TitleSection>
+
+  <div class="mx-auto grid w-full max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
+    {
+      educationsData.map((education) => (
+        <div class="h-min rounded-lg border border-indigo-900 bg-gray-800 p-6 transition-all duration-300 hover:scale-105 hover:border-indigo-700">
+          <div class="mb-4 w-min rounded-lg bg-indigo-900 p-4 text-indigo-500">
+            <GraduationCap class="h-6 w-6 text-neutral-100" />
+          </div>
+          {/* <div class="flex items-center gap-2"> */}
+          <h3 class="text-lg font-bold">{education.name}</h3>
+          {/* </div> */}
+          <p class="my-2 text-lime-600">
+            {education.institution}
+            {formatEducationDate(education.date) && ` - ${formatEducationDate(education.date)}`}
+          </p>
+          <p class="text-justify">{education.description}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>

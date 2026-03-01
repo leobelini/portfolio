@@ -1,0 +1,56 @@
+---
+import { experienceYears } from '../../../data/career';
+import Tag from '../../ui/Tag.astro';
+import TitleSection from '../../ui/TitleSection.astro';
+
+const technologies = ['React', 'TypeScript', 'Node.js', 'NestJS', 'GoLang'];
+---
+
+<div class="flex flex-col items-center">
+  <div
+    class="h-px w-5/6 bg-indigo-900 mask-r-from-black mask-r-from-80% mask-r-to-transparent mask-l-from-black mask-l-from-80% mask-l-to-transparent mask-alpha"
+  >
+  </div>
+</div>
+
+<section
+  class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-32 py-20 md:px-20"
+  id="about"
+  aria-label="Sobre mim"
+>
+  <div class="hero-light hero-light-3" aria-hidden="true"></div>
+
+  <TitleSection>
+    <span slot="subtitle">Sobre mim</span>
+    <span slot="title">Experiência em diversas </span>
+    <span slot="highlight">tecnologias</span>
+  </TitleSection>
+
+  <div
+    class="mx-auto mt-12 grid w-full max-w-6xl items-center gap-12 md:grid-cols-[auto_1fr] md:gap-12"
+  >
+    <div>
+      <p class="mb-4 max-w-lg text-xl leading-relaxed text-gray-400">
+        Sou Desenvolvedor Full Stack com mais de {experienceYears} anos de atuação no mercado. Já trabalhei
+        em empresas como <a href="https://www.iteam.inf.br/" class="link" target="_parent">ITeam</a
+        >, <a href="https://www.sodretox.com.br/" class="link" target="_parent">Sodré</a>, <a
+          href="https://www.roberty.app/"
+          class="link"
+          target="_parent">Roberty</a
+        > e atualmente estou na <a
+          href="https://www.globalsys.com.br/"
+          class="link"
+          target="_parent">Globalsys</a
+        > como outsourcing.
+      </p>
+      <p class="mb-8 max-w-lg text-xl leading-relaxed text-gray-400">
+        Essa diversidade garantiu ampla experiência em diversas tecnologias, desde frontend até
+        backend, mobile e desktop.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-4">
+      {technologies.map((tech) => <Tag>{tech}</Tag>)}
+    </div>
+  </div>
+</section>

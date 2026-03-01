@@ -1,0 +1,56 @@
+---
+import { Linkedin, Github } from '@lucide/astro';
+
+const items = [
+  { label: 'Início', href: '#hero' },
+  { label: 'Sobre', href: '#about' },
+  // { label: "Projetos", href: "#projects" },
+  { label: 'Carreira', href: '#career' },
+  { label: 'Formação', href: '#education' },
+  // { label: "Blog", href: "#blog" },
+  { label: 'Contato', href: '#contact' },
+];
+
+const rightItems = [
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/leobelini/', alt: 'LinkedIn' },
+  { icon: Github, href: 'https://github.com/leobelini', alt: 'GitHub' },
+];
+---
+
+<nav
+  class="bg-background/80 border-border/50 fixed top-0 right-0 left-0 z-50 border-b backdrop-blur-md"
+  aria-label="Navegação principal"
+>
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <a href="#hero" class="font-heading text-foreground text-xl font-bold">
+      LB <span class="text-primary">.</span>
+    </a>
+    <div class="hidden items-center gap-8 md:flex">
+      {
+        items.map((item) => (
+          <a
+            href={item.href}
+            class="text-muted-foreground hover:text-primary text-sm font-medium transition-colors duration-300"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </div>
+    <div class="flex items-center gap-3">
+      {
+        rightItems.map((item) => (
+          <a
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-muted-foreground hover:text-primary transition-colors"
+            aria-label={item.alt}
+          >
+            <item.icon size={18} aria-label={item.alt} />
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</nav>
