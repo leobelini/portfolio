@@ -1,0 +1,57 @@
+---
+import Divider from '../../ui/Divider.astro';
+import TitleSection from '../../ui/TitleSection.astro';
+import { Mail, MessageCircle, Linkedin } from '@lucide/astro';
+---
+
+<Divider />
+
+<section
+  class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gray-900 px-32 py-20 md:px-20"
+  id="contact"
+  aria-label="Contato"
+>
+  <div class="hero-light hero-light-1" aria-hidden="true"></div>
+  <div class="hero-light hero-light-2" aria-hidden="true"></div>
+  <div class="hero-light hero-light-3" aria-hidden="true"></div>
+  <TitleSection subtitleClass="text-center" titleClass="text-center" highlightClass="text-center">
+    <span slot="subtitle">Contato</span>
+    <span slot="title">Vamos </span>
+    <span slot="highlight">conversar?</span>
+  </TitleSection>
+  <p class="text-center">Se interessou? Entre em contato por qualquer um dos canais abaixo.</p>
+
+  <div class="mx-auto mt-4 grid w-full max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
+    <a
+      href="mailto:leobelini96@gmail.com"
+      class="flex flex-col items-center gap-2 rounded-lg bg-gray-800 p-8 text-lime-600 transition-colors duration-300 hover:text-lime-400"
+      aria-label="Enviar e-mail para Leonardo Belini"
+      target="_blank"
+    >
+      <Mail class="h-8 w-8" aria-hidden="true" />
+      <span class="text-lg font-medium">E-mail</span>
+    </a>
+
+    <a
+      href="https://wa.me/5514996271006"
+      class="flex flex-col items-center gap-2 rounded-lg bg-gray-800 p-8 text-lime-600 transition-colors duration-300 hover:text-lime-400"
+      aria-label="Enviar mensagem no WhatsApp"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <MessageCircle class="h-8 w-8" aria-hidden="true" />
+      <span class="text-lg font-medium">WhatsApp</span>
+    </a>
+
+    <a
+      href="https://www.linkedin.com/in/leobelini/"
+      target="_blank"
+      class="flex flex-col items-center gap-2 rounded-lg bg-gray-800 p-8 text-lime-600 transition-colors duration-300 hover:text-lime-400"
+      aria-label="Perfil de Leonardo Belini no LinkedIn"
+      rel="noopener noreferrer"
+    >
+      <Linkedin class="h-8 w-8" aria-hidden="true" />
+      <span class="text-lg font-medium">LinkedIn</span>
+    </a>
+  </div>
+</section>

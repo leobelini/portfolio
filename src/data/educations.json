@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Clean Code e Clean Architecture",
+    "institution": "Branas.io",
+    "date": {
+      "start": "2021"
+    },
+    "description": "TypeScript com Clean Code, Refactoring, TDD, OO, Ports and Adapters, Clean Architecture, DDD, Design Patterns, SOLID, Event Sourcing, CQRS."
+  },
+  {
+    "name": "Tecnólogo em Análise e Desenvolvimento",
+    "institution": "Unilins",
+    "date": {
+      "start": "2015-01-01",
+      "end": "2018-01-01"
+    },
+    "description": "Formação superior com aprofundamento em JAVA, C# e MySQL."
+  },
+  {
+    "name": "Técnico em Informática para WEB",
+    "institution": "ETEC",
+    "date": {
+      "start": "2013-01-01",
+      "end": "2013-06-01"
+    },
+    "description": "Curso que abriu as portas para o mundo da tecnologia com PHP, HTML e CSS."
+  }
+]

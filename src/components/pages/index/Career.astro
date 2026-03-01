@@ -1,0 +1,56 @@
+---
+import { formatDateRange } from '../../../utils/timeline';
+import Container from '../../ui/timeline/Container.astro';
+import Item from '../../ui/timeline/Item.astro';
+import timelineData from '../../../data/timeline.json';
+import type { TimelineItem } from '../../../types/time-line-item';
+import Tag from '../../ui/Tag.astro';
+import Divider from '../../ui/Divider.astro';
+import TitleSection from '../../ui/TitleSection.astro';
+
+const timeline: TimelineItem[] = timelineData.map((item) => ({
+  ...item,
+  date: {
+    start: new Date(item.date.start),
+    end: item.date.end ? new Date(item.date.end) : null,
+  },
+}));
+---
+
+<Divider />
+
+<section
+  class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gray-900 px-32 py-20 md:px-20"
+  id="career"
+  aria-label="Experiência profissional"
+>
+  <div class="hero-light hero-light-2" aria-hidden="true"></div>
+
+  <TitleSection>
+    <span slot="subtitle">Trajetória</span>
+    <span slot="title">Experiência </span>
+    <span slot="highlight">profissional</span>
+  </TitleSection>
+
+  <Container>
+    {
+      timeline.map((item, index) => (
+        <Item index={index}>
+          <h3 slot="title">
+            {item.title}
+            {item.date.end === null && (
+              <span class="rounded-md bg-indigo-800 px-2 py-0.5 text-sm font-normal">Atual</span>
+            )}
+          </h3>
+          <p slot="date">{formatDateRange(item.date.start, item.date.end)}</p>
+          <div slot="description" set:html={item.description} />
+          {item?.tags?.map((tag) => (
+            <Tag slot="tags" class="text-sm">
+              {tag}
+            </Tag>
+          ))}
+        </Item>
+      ))
+    }
+  </Container>
+</section>
