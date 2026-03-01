@@ -17,6 +17,7 @@
     "@astrojs/sitemap": "^3.7.0",
     "@fontsource/space-grotesk": "^5.2.10",
     "@lucide/astro": "^0.575.0",
+    "@tailwindcss/vite": "^4.2.1",
     "astro": "^5.17.1",
     "tailwindcss": "^4.2.1"
   },
