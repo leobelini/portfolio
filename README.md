@@ -22,15 +22,15 @@ Site pessoal e portfolio de **Leonardo Siervo Belini** — Desenvolvedor Full St
 
 ## 🛠️ Tech Stack
 
-| Categoria        | Tecnologia                                                              |
-| :--------------- | :---------------------------------------------------------------------- |
-| Framework        | [Astro 5](https://astro.build/)                                         |
-| Estilização      | [Tailwind CSS v4](https://tailwindcss.com/)                             |
-| Linguagem        | [TypeScript](https://www.typescriptlang.org/)                           |
-| Ícones           | [Lucide](https://lucide.dev/)                                           |
-| Fonte            | [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk)        |
-| SEO              | Sitemap, Open Graph, JSON-LD, meta tags                                 |
-| Linting          | ESLint + Prettier                                                       |
+| Categoria   | Tecnologia                                                       |
+| :---------- | :--------------------------------------------------------------- |
+| Framework   | [Astro 5](https://astro.build/)                                  |
+| Estilização | [Tailwind CSS v4](https://tailwindcss.com/)                      |
+| Linguagem   | [TypeScript](https://www.typescriptlang.org/)                    |
+| Ícones      | [Lucide](https://lucide.dev/)                                    |
+| Fonte       | [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk) |
+| SEO         | Sitemap, Open Graph, JSON-LD, meta tags                          |
+| Linting     | ESLint + Prettier                                                |
 
 ---
 
@@ -72,14 +72,14 @@ npm install
 
 ### Comandos
 
-| Comando              | Ação                                                     |
-| :------------------- | :------------------------------------------------------- |
-| `npm run dev`        | Inicia o servidor de desenvolvimento em `localhost:4321`  |
-| `npm run build`      | Gera o build de produção em `./dist/`                    |
-| `npm run preview`    | Pré-visualiza o build localmente                         |
-| `npm run lint`       | Verifica erros de linting                                |
-| `npm run lint:fix`   | Corrige erros de linting automaticamente                 |
-| `npm run format`     | Formata o código com Prettier                            |
+| Comando            | Ação                                                     |
+| :----------------- | :------------------------------------------------------- |
+| `npm run dev`      | Inicia o servidor de desenvolvimento em `localhost:4321` |
+| `npm run build`    | Gera o build de produção em `./dist/`                    |
+| `npm run preview`  | Pré-visualiza o build localmente                         |
+| `npm run lint`     | Verifica erros de linting                                |
+| `npm run lint:fix` | Corrige erros de linting automaticamente                 |
+| `npm run format`   | Formata o código com Prettier                            |
 
 ---
 
