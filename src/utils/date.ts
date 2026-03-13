@@ -11,7 +11,7 @@ interface DateRange {
   end?: string;
 }
 
-export function formatEducationDate(date: DateRange | null): string {
+export const formatEducationDate = (date: DateRange | null): string => {
   if (!date) {
     return '';
   }
