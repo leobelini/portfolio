@@ -28,4 +28,4 @@ export const formatEducationDate = (date: DateRange | null): string => {
   }
 
   return '';
-}
+};

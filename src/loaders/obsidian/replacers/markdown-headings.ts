@@ -1,4 +1,4 @@
-import { slugify } from "../../../utils/strings";
+import { slugify } from '../../../utils/strings';
 
 export const replaceMarkdownHeadings = (result: string) => {
   return result.replace(/^(#{1,6})\s+(.*)$/gm, (_, hashes, title) => {

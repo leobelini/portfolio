@@ -1,4 +1,4 @@
-import { slugify } from "../../../utils/strings";
+import { slugify } from '../../../utils/strings';
 
 export const replaceWikiLinks = (result: string) => {
   return result.replace(/\[\[(.*?)\]\]/g, (_, link) => {
@@ -8,4 +8,4 @@ export const replaceWikiLinks = (result: string) => {
 
     return `[${label ?? target}](/blog/${slug})`;
   });
-}
+};

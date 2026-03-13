@@ -45,7 +45,6 @@ function buildPathWithSuffix(publicPath: string, suffix: string) {
   return `${withoutExtension}-${suffix}${extension}`;
 }
 
-
 function resolveUniquePublicPath(
   publicPath: string,
   sourcePath: string,
@@ -76,31 +75,40 @@ function isImageFile(file: string) {
   return /\.(gif|jpe?g|tiff?|png|webp|bmp|svg)$/i.test(file);
 }
 
-export const replaceObsidianEmbeds = (result: string, filePath: string, vaultBasePath: string, publicAssetsDir: string, publicAssetRegistry: Map<string, string>, assetsToCopy: Array<{ sourcePath: string; destinationPath: string; publicUrl: string }>) => {
+export const replaceObsidianEmbeds = (
+  result: string,
+  filePath: string,
+  vaultBasePath: string,
+  publicAssetsDir: string,
+  publicAssetRegistry: Map<string, string>,
+  assetsToCopy: Array<{ sourcePath: string; destinationPath: string; publicUrl: string }>,
+) => {
   return result.replace(/!\[\[(.*?)\]\]/g, (_, target) => {
-      const file = target.split('|')[0].trim();
-      const sourcePath = path.resolve(path.dirname(filePath), file);
-      const safeRelativePath = resolveSafeRelativePath(vaultBasePath, sourcePath);
-      const sanitizedRelativePath = sanitizePath(safeRelativePath);
-      const requestedPublicPath = normalizeToPosixPath(path.join(publicAssetsDir, sanitizedRelativePath));
-      const publicFilePath = resolveUniquePublicPath(
-        requestedPublicPath,
-        sourcePath,
-        publicAssetRegistry,
-      );
-      const destinationPath = path.resolve(process.cwd(), 'public', publicFilePath);
-      const publicUrl = `/${publicFilePath}`;
-  
-      assetsToCopy.push({
-        sourcePath,
-        destinationPath,
-        publicUrl,
-      });
-  
-      if (isImageFile(file)) {
-        return `<img src="${publicUrl}" alt="${path.basename(file)}" />`;
-      }
-  
-      return `[Download](${publicUrl})`;
+    const file = target.split('|')[0].trim();
+    const sourcePath = path.resolve(path.dirname(filePath), file);
+    const safeRelativePath = resolveSafeRelativePath(vaultBasePath, sourcePath);
+    const sanitizedRelativePath = sanitizePath(safeRelativePath);
+    const requestedPublicPath = normalizeToPosixPath(
+      path.join(publicAssetsDir, sanitizedRelativePath),
+    );
+    const publicFilePath = resolveUniquePublicPath(
+      requestedPublicPath,
+      sourcePath,
+      publicAssetRegistry,
+    );
+    const destinationPath = path.resolve(process.cwd(), 'public', publicFilePath);
+    const publicUrl = `/${publicFilePath}`;
+
+    assetsToCopy.push({
+      sourcePath,
+      destinationPath,
+      publicUrl,
     });
+
+    if (isImageFile(file)) {
+      return `<img src="${publicUrl}" alt="${path.basename(file)}" />`;
+    }
+
+    return `[Download](${publicUrl})`;
+  });
 };

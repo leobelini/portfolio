@@ -25,22 +25,43 @@ const { Content } = await render(post);
 ---
 
 <Layout title={`${post.data.title} | Blog`} description={post.data.description}>
-  <section class="relative min-h-screen overflow-hidden px-5 pt-24 pb-20 sm:px-8 md:px-10" aria-label="Post do blog">
-    <div aria-hidden="true" class="pointer-events-none absolute -top-16 -left-8 h-64 w-64 rounded-full bg-lime-500/10 blur-3xl"></div>
-    <div aria-hidden="true" class="pointer-events-none absolute top-36 -right-10 h-72 w-72 rounded-full bg-indigo-500/10 blur-3xl"></div>
+  <section
+    class="relative min-h-screen overflow-hidden px-5 pt-24 pb-20 sm:px-8 md:px-10"
+    aria-label="Post do blog"
+  >
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute -top-16 -left-8 h-64 w-64 rounded-full bg-lime-500/10 blur-3xl"
+    >
+    </div>
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute top-36 -right-10 h-72 w-72 rounded-full bg-indigo-500/10 blur-3xl"
+    >
+    </div>
 
     <div class="relative mx-auto w-full max-w-4xl">
       <a href="/blog" class="link inline-flex items-center gap-2 text-sm">← Voltar para o blog</a>
 
-      <header class="mt-6 rounded-2xl border border-white/10 bg-white/3 p-6 shadow-2xl shadow-black/20 backdrop-blur-sm sm:p-8">
+      <header
+        class="mt-6 rounded-2xl border border-white/10 bg-white/3 p-6 shadow-2xl shadow-black/20 backdrop-blur-sm sm:p-8"
+      >
         <p class="text-xs tracking-[0.18em] text-gray-400 uppercase">
           {formatDate(post.data.pubDate)}
         </p>
-        <h1 class="primary-text-gradient mt-3 text-3xl leading-tight font-bold sm:text-4xl md:text-5xl">{post.data.title}</h1>
-        <p class="mt-5 max-w-2xl text-base leading-relaxed text-gray-300 sm:text-lg">{post.data.description}</p>
+        <h1
+          class="primary-text-gradient mt-3 text-3xl leading-tight font-bold sm:text-4xl md:text-5xl"
+        >
+          {post.data.title}
+        </h1>
+        <p class="mt-5 max-w-2xl text-base leading-relaxed text-gray-300 sm:text-lg">
+          {post.data.description}
+        </p>
       </header>
 
-      <article class="blog-content mt-8 rounded-2xl border border-white/10 bg-black/20 p-6 text-gray-200 shadow-xl shadow-black/20 sm:mt-10 sm:p-10">
+      <article
+        class="blog-content mt-8 rounded-2xl border border-white/10 bg-black/20 p-6 text-gray-200 shadow-xl shadow-black/20 sm:mt-10 sm:p-10"
+      >
         <Content />
       </article>
     </div>

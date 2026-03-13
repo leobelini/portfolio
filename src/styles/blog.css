@@ -4,12 +4,7 @@
   @apply mt-12 mb-5 text-3xl leading-tight font-bold text-zinc-50;
   border-bottom: 1px solid transparent;
   border-image-slice: 1;
-  border-image-source: linear-gradient(
-    to right,
-    transparent,
-    rgb(228 228 231 / 0.85),
-    transparent
-  );
+  border-image-source: linear-gradient(to right, transparent, rgb(228 228 231 / 0.85), transparent);
   padding-bottom: 0.75rem;
 }
 
@@ -17,12 +12,7 @@
   @apply mt-10 mb-4 text-2xl leading-snug font-semibold text-zinc-100;
   border-bottom: 1px solid transparent;
   border-image-slice: 1;
-  border-image-source: linear-gradient(
-    to right,
-    transparent,
-    rgb(228 228 231 / 0.75),
-    transparent
-  );
+  border-image-source: linear-gradient(to right, transparent, rgb(228 228 231 / 0.75), transparent);
   padding-bottom: 0.5rem;
 }
 
@@ -39,7 +29,7 @@
 }
 
 .blog-content a {
-  @apply text-lime-400 underline underline-offset-4 decoration-lime-400/40 transition-colors duration-200;
+  @apply text-lime-400 underline decoration-lime-400/40 underline-offset-4 transition-colors duration-200;
 }
 
 .blog-content a:hover {
@@ -48,7 +38,7 @@
 
 .blog-content ul,
 .blog-content ol {
-  @apply my-5 pl-6 space-y-2 text-zinc-200/95;
+  @apply my-5 space-y-2 pl-6 text-zinc-200/95;
 }
 
 .blog-content ul {
@@ -64,7 +54,7 @@
 }
 
 .blog-content blockquote {
-  @apply relative my-8 rounded-r-xl px-7 py-5 italic text-zinc-200;
+  @apply relative my-8 rounded-r-xl px-7 py-5 text-zinc-200 italic;
   background: linear-gradient(90deg, rgb(255 255 255 / 0.07), transparent 70%);
   border-left: 3px solid rgb(163 230 53 / 0.8);
 }
@@ -91,12 +81,7 @@
   @apply my-10 border-0;
   border-top: 1px solid transparent;
   border-image-slice: 1;
-  border-image-source: linear-gradient(
-    to right,
-    transparent,
-    rgb(212 212 216 / 0.6),
-    transparent
-  );
+  border-image-source: linear-gradient(to right, transparent, rgb(212 212 216 / 0.6), transparent);
 }
 
 .blog-content code {

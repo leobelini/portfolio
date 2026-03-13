@@ -1,4 +1,4 @@
-import { slugify } from "../../../utils/strings";
+import { slugify } from '../../../utils/strings';
 
 export const replaceInternalAnchorLinks = (result: string) => {
   return result.replace(/\[\[#(.*?)\]\]/g, (_, section) => {

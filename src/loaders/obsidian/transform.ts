@@ -1,5 +1,5 @@
 import type { AssetToCopy, PublicAssetRegistry } from './obsidian';
-import {replacers} from './replacers'
+import { replacers } from './replacers';
 
 export function transformObsidian(
   filePath: string,
@@ -13,7 +13,14 @@ export function transformObsidian(
 
   result = replacers.headings(result);
   result = replacers.internalAnchorLinks(result);
-  result = replacers.embeds(result, filePath, vaultBasePath, publicAssetsDir, publicAssetRegistry, assetsToCopy);
+  result = replacers.embeds(
+    result,
+    filePath,
+    vaultBasePath,
+    publicAssetsDir,
+    publicAssetRegistry,
+    assetsToCopy,
+  );
   result = replacers.wikiLinks(result);
   result = replacers.externalLinks(result);
 
