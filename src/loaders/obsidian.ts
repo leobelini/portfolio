@@ -20,8 +20,6 @@ interface AssetToCopy {
 
 type PublicAssetRegistry = Map<string, string>;
 
-
-
 function toPosixPath(value: string) {
   return value.split(path.sep).join('/');
 }
@@ -57,7 +55,6 @@ function sanitizeRelativePath(relativePath: string) {
     .map((segment) => sanitizePathSegment(segment))
     .join('/');
 }
-
 
 function appendSuffixToPublicPath(publicPath: string, suffix: string) {
   const extension = path.posix.extname(publicPath);
@@ -102,6 +99,19 @@ function transformObsidian(
   let result = content;
   const assetsToCopy: AssetToCopy[] = [];
 
+  // Replace all headings with slugified IDs for internal linking
+  result = result.replace(/^(#{1,6})\s+(.*)$/gm, (_, hashes, title) => {
+    const level = hashes.length;
+    const slug = slugify(title);
+    return `<h${level} id="${slug}">${title}</h${level}>`;
+  });
+
+  // Create internal link for navigation in sections [[#section]]
+  result = result.replace(/\[\[#(.*?)\]\]/g, (_, section) => {
+    const slug = slugify(section);
+    return `<a href="#${slug}">${section}</a>`;
+  });
+
   // ![[embed]]
   result = result.replace(/!\[\[(.*?)\]\]/g, (_, target) => {
     const file = target.split('|')[0].trim();
@@ -138,6 +148,13 @@ function transformObsidian(
 
     return `[${label ?? target}](/blog/${slug})`;
   });
+
+  // Create link target _blank for external links [link](http://example.com)
+  result = result.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, (_, text, url) => {
+    return `<a href="${url}" target="_blank" rel="noopener noreferrer">${text}</a>`;
+  });
+
+  console.log(result);
 
   return {
     content: result,
