@@ -1,0 +1,98 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+import { render } from "astro:content";
+import Layout from "../../layouts/out/Layout.astro";
+import { formatDate } from "../../utils/date";
+import { createSlug } from "../../utils/strings";
+
+export async function getStaticPaths() {
+	const posts = await getCollection("blog");
+
+	return posts.map((post) => ({
+		params: { slug: createSlug(post.data.title) },
+		props: { post },
+	}));
+}
+
+interface Props {
+	post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props as Props;
+const { Content } = await render(post);
+---
+
+<Layout title={`${post.data.title} | Blog`} description={post.data.description}>
+	<section class="min-h-screen px-10 pt-24 pb-16 sm:px-16 md:px-20" aria-label="Post do blog">
+		<a href="/blog" class="link text-sm">← Voltar para o blog</a>
+
+		<header class="mt-6 max-w-3xl">
+			<p class="text-sm text-gray-400">{formatDate(post.data.pubDate)}</p>
+			<h1 class="mt-2 text-4xl font-bold leading-tight primary-text-gradient">{post.data.title}</h1>
+			<p class="mt-4 text-lg text-gray-300">{post.data.description}</p>
+		</header>
+
+		<article class="blog-content mt-10 max-w-3xl text-gray-200">
+			<Content />
+		</article>
+	</section>
+</Layout>
+
+<style>
+	.blog-content :global(h2),
+	.blog-content :global(h3) {
+		margin-top: 2rem;
+		margin-bottom: 0.75rem;
+		line-height: 1.2;
+		color: hsl(220 10% 92%);
+	}
+
+	.blog-content :global(h2) {
+		font-size: 1.75rem;
+		font-weight: 700;
+	}
+
+	.blog-content :global(h3) {
+		font-size: 1.35rem;
+		font-weight: 600;
+	}
+
+	.blog-content :global(p),
+	.blog-content :global(ul),
+	.blog-content :global(ol) {
+		margin-top: 1rem;
+		line-height: 1.8;
+	}
+
+	.blog-content :global(ul),
+	.blog-content :global(ol) {
+		padding-left: 1.5rem;
+	}
+
+	.blog-content :global(a) {
+		color: #84cc16;
+		text-decoration: underline;
+		text-underline-offset: 0.2rem;
+	}
+
+	.blog-content :global(code) {
+		border-radius: 0.375rem;
+		background: hsl(220 14% 14%);
+		padding: 0.1rem 0.35rem;
+		font-size: 0.9em;
+	}
+
+	.blog-content :global(pre) {
+		margin-top: 1.25rem;
+		overflow-x: auto;
+		border-radius: 0.75rem;
+		background: hsl(220 16% 12%);
+		padding: 1rem;
+	}
+
+	.blog-content :global(pre code) {
+		background: transparent;
+		padding: 0;
+	}
+</style>
