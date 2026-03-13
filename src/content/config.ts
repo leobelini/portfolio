@@ -1,13 +1,18 @@
 import { defineCollection, z } from "astro:content";
-import { glob } from "astro/loaders";
 import { OBSIDIAN_VAULT_PATH } from "astro:env/server";
+import { obsidianLoader } from "../loaders/obsidian";
 
 const blog = defineCollection({
-  loader: glob({ pattern: ["**/*.md", "!**/*.excalidraw.md"], base: OBSIDIAN_VAULT_PATH }),
+  loader: obsidianLoader({
+    base: OBSIDIAN_VAULT_PATH,
+    publicAssetsDir: "obsidian",
+    pattern: ["**/*.md", "!**/*.excalidraw.md"],
+  }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    pubDate: z.date()
+    pubDate: z.date(),
+    slug: z.string(),
   })
 });
 
