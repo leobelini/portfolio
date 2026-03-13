@@ -9,7 +9,7 @@ import { formatEducationDate } from '../../../utils/date.ts';
 <Divider />
 
 <section
-  class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-32 py-20 md:px-20"
+  class="relative flex min-h-screen scroll-mt-24 flex-col items-center justify-center overflow-hidden px-4 py-16 sm:px-6 lg:px-20 xl:px-32"
   id="education"
   aria-label="Educação e cursos"
 >
@@ -22,7 +22,7 @@ import { formatEducationDate } from '../../../utils/date.ts';
   <div class="mx-auto grid w-full max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
     {
       educationsData.map((education) => (
-        <div class="h-min rounded-lg border border-indigo-900 bg-gray-800 p-6 transition-all duration-300 hover:scale-105 hover:border-indigo-700">
+        <div class="h-min rounded-lg border border-indigo-900 bg-gray-800 p-5 transition-all duration-300 hover:border-indigo-700 md:p-6 md:hover:scale-105">
           <div class="mb-4 w-min rounded-lg bg-indigo-900 p-4 text-indigo-500">
             <GraduationCap class="h-6 w-6 text-neutral-100" />
           </div>

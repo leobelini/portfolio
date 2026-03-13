@@ -1,5 +1,5 @@
 ---
-import { Linkedin, Github } from '@lucide/astro';
+import { Github, Linkedin, Menu } from '@lucide/astro';
 
 const items = [
   { label: 'Início', href: '/#hero' },
@@ -21,11 +21,11 @@ const rightItems = [
   class="bg-background/80 border-border/50 fixed top-0 right-0 left-0 z-50 border-b backdrop-blur-md"
   aria-label="Navegação principal"
 >
-  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-    <a href="#hero" class="font-heading text-foreground text-xl font-bold">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
+    <a href="/#hero" class="font-heading text-foreground text-xl font-bold">
       LB <span class="text-primary">.</span>
     </a>
-    <div class="hidden items-center gap-8 md:flex">
+    <div class="hidden items-center gap-6 md:flex xl:gap-8">
       {
         items.map((item) => (
           <a
@@ -37,7 +37,7 @@ const rightItems = [
         ))
       }
     </div>
-    <div class="flex items-center gap-3">
+    <div class="hidden items-center gap-3 md:flex">
       {
         rightItems.map((item) => (
           <a
@@ -52,5 +52,44 @@ const rightItems = [
         ))
       }
     </div>
+    <details class="group relative lg:hidden">
+      <summary
+        class="text-muted-foreground hover:text-primary flex cursor-pointer list-none items-center justify-center rounded-md p-2 transition-colors"
+        aria-label="Abrir menu"
+      >
+        <Menu size={20} aria-hidden="true" />
+      </summary>
+
+      <div class="bg-background/95 border-border/50 absolute top-full right-0 mt-3 w-[min(18rem,calc(100vw-2rem))] rounded-2xl border p-4 shadow-2xl backdrop-blur-xl">
+        <div class="flex flex-col gap-2">
+          {
+            items.map((item) => (
+              <a
+                href={item.href}
+                class="text-muted-foreground hover:text-primary hover:bg-white/5 rounded-xl px-3 py-2 text-sm font-medium transition-colors duration-300"
+              >
+                {item.label}
+              </a>
+            ))
+          }
+        </div>
+
+        <div class="border-border/50 mt-4 flex items-center gap-3 border-t pt-4">
+          {
+            rightItems.map((item) => (
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-muted-foreground hover:text-primary transition-colors"
+                aria-label={item.alt}
+              >
+                <item.icon size={18} aria-label={item.alt} />
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </details>
   </div>
 </nav>

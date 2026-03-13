@@ -7,7 +7,7 @@ import { Mail, MessageCircle, Linkedin } from '@lucide/astro';
 <Divider />
 
 <section
-  class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gray-900 px-32 py-20 md:px-20"
+  class="relative flex min-h-screen scroll-mt-24 flex-col items-center justify-center overflow-hidden bg-gray-900 px-4 py-16 sm:px-6 lg:px-20 xl:px-32"
   id="contact"
   aria-label="Contato"
 >
@@ -19,7 +19,9 @@ import { Mail, MessageCircle, Linkedin } from '@lucide/astro';
     <span slot="title">Vamos </span>
     <span slot="highlight">conversar?</span>
   </TitleSection>
-  <p class="text-center">Se interessou? Entre em contato por qualquer um dos canais abaixo.</p>
+  <p class="max-w-2xl text-center text-sm sm:text-base">
+    Se interessou? Entre em contato por qualquer um dos canais abaixo.
+  </p>
 
   <div class="mx-auto mt-4 grid w-full max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
     <a
