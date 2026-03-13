@@ -1,0 +1,112 @@
+@reference "./global.css";
+
+.blog-content h1 {
+  @apply mt-12 mb-5 text-3xl leading-tight font-bold text-zinc-50;
+  border-bottom: 1px solid transparent;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(
+    to right,
+    transparent,
+    rgb(228 228 231 / 0.85),
+    transparent
+  );
+  padding-bottom: 0.75rem;
+}
+
+.blog-content h2 {
+  @apply mt-10 mb-4 text-2xl leading-snug font-semibold text-zinc-100;
+  border-bottom: 1px solid transparent;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(
+    to right,
+    transparent,
+    rgb(228 228 231 / 0.75),
+    transparent
+  );
+  padding-bottom: 0.5rem;
+}
+
+.blog-content h3 {
+  @apply mt-8 mb-3 text-xl font-semibold text-zinc-100;
+}
+
+.blog-content p {
+  @apply mt-5 text-base leading-8 text-zinc-200/95;
+}
+
+.blog-content p + p {
+  @apply mt-4;
+}
+
+.blog-content a {
+  @apply text-lime-400 underline underline-offset-4 decoration-lime-400/40 transition-colors duration-200;
+}
+
+.blog-content a:hover {
+  @apply text-lime-300 decoration-lime-300/70;
+}
+
+.blog-content ul,
+.blog-content ol {
+  @apply my-5 pl-6 space-y-2 text-zinc-200/95;
+}
+
+.blog-content ul {
+  list-style: disc;
+}
+
+.blog-content ol {
+  list-style: decimal;
+}
+
+.blog-content li {
+  @apply leading-7;
+}
+
+.blog-content blockquote {
+  @apply relative my-8 rounded-r-xl px-7 py-5 italic text-zinc-200;
+  background: linear-gradient(90deg, rgb(255 255 255 / 0.07), transparent 70%);
+  border-left: 3px solid rgb(163 230 53 / 0.8);
+}
+
+.blog-content blockquote::before {
+  content: '"';
+  position: absolute;
+  top: 0.1rem;
+  left: 0.65rem;
+  font-size: 2.4rem;
+  line-height: 1;
+  color: rgb(163 230 53 / 0.45);
+}
+
+.blog-content blockquote p {
+  @apply m-0 indent-0;
+}
+
+.blog-content img {
+  @apply mx-auto my-8 rounded-xl border border-white/10;
+}
+
+.blog-content hr {
+  @apply my-10 border-0;
+  border-top: 1px solid transparent;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(
+    to right,
+    transparent,
+    rgb(212 212 216 / 0.6),
+    transparent
+  );
+}
+
+.blog-content code {
+  @apply rounded-md bg-white/10 px-1.5 py-0.5 text-sm text-lime-200;
+}
+
+.blog-content pre {
+  @apply my-6 overflow-x-auto rounded-xl border border-white/10 bg-black/35 p-4;
+}
+
+.blog-content pre code {
+  @apply bg-transparent p-0 text-sm text-zinc-100;
+}

@@ -1,102 +1,48 @@
 ---
-import type { CollectionEntry } from "astro:content";
-import { getCollection } from "astro:content";
-import { render } from "astro:content";
-import Layout from "../../layouts/out/Layout.astro";
-import { formatDate } from "../../utils/date";
-import { createSlug } from "../../utils/strings";
+import '../../styles/blog.css';
+
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+import { render } from 'astro:content';
+import Layout from '../../layouts/out/Layout.astro';
+import { formatDate } from '../../utils/date';
 
 export async function getStaticPaths() {
-	const posts = await getCollection("blog");
+  const posts = await getCollection('blog');
 
-	return posts.map((post) => ({
-		params: { slug: createSlug(post.data.title) },
-		props: { post },
-	}));
+  return posts.map((post) => ({
+    params: { slug: post.data.slug },
+    props: { post },
+  }));
 }
 
 interface Props {
-	post: CollectionEntry<"blog">;
+  post: CollectionEntry<'blog'>;
 }
 
 const { post } = Astro.props as Props;
-// console.log(post);
 const { Content } = await render(post);
 ---
 
 <Layout title={`${post.data.title} | Blog`} description={post.data.description}>
-	<section class="min-h-screen px-10 pt-24 pb-16 sm:px-16 md:px-20" aria-label="Post do blog">
-		<a href="/blog" class="link text-sm">← Voltar para o blog</a>
+  <section class="relative min-h-screen overflow-hidden px-5 pt-24 pb-20 sm:px-8 md:px-10" aria-label="Post do blog">
+    <div aria-hidden="true" class="pointer-events-none absolute -top-16 -left-8 h-64 w-64 rounded-full bg-lime-500/10 blur-3xl"></div>
+    <div aria-hidden="true" class="pointer-events-none absolute top-36 -right-10 h-72 w-72 rounded-full bg-indigo-500/10 blur-3xl"></div>
 
-		<header class="mt-6">
-			<p class="text-sm text-gray-400">
-				{formatDate(post.data.pubDate)}
+    <div class="relative mx-auto w-full max-w-4xl">
+      <a href="/blog" class="link inline-flex items-center gap-2 text-sm">← Voltar para o blog</a>
 
-			</p>
-			<h1 class="mt-2 text-4xl font-bold leading-tight primary-text-gradient">{post.data.title}</h1>
-			<p class="mt-4 text-lg text-gray-300">{post.data.description}</p>
-		</header>
+      <header class="mt-6 rounded-2xl border border-white/10 bg-white/3 p-6 shadow-2xl shadow-black/20 backdrop-blur-sm sm:p-8">
+        <p class="text-xs tracking-[0.18em] text-gray-400 uppercase">
+          {formatDate(post.data.pubDate)}
+        </p>
+        <h1 class="primary-text-gradient mt-3 text-3xl leading-tight font-bold sm:text-4xl md:text-5xl">{post.data.title}</h1>
+        <p class="mt-5 max-w-2xl text-base leading-relaxed text-gray-300 sm:text-lg">{post.data.description}</p>
+      </header>
 
-		<article class="blog-content mt-10 text-gray-200">
-			<Content />
-		</article>
-	</section>
+      <article class="blog-content mt-8 rounded-2xl border border-white/10 bg-black/20 p-6 text-gray-200 shadow-xl shadow-black/20 sm:mt-10 sm:p-10">
+        <Content />
+      </article>
+    </div>
+  </section>
 </Layout>
-
-<style>
-	.blog-content :global(h2),
-	.blog-content :global(h3) {
-		margin-top: 2rem;
-		margin-bottom: 0.75rem;
-		line-height: 1.2;
-		color: hsl(220 10% 92%);
-	}
-
-	.blog-content :global(h2) {
-		font-size: 1.75rem;
-		font-weight: 700;
-	}
-
-	.blog-content :global(h3) {
-		font-size: 1.35rem;
-		font-weight: 600;
-	}
-
-	.blog-content :global(p),
-	.blog-content :global(ul),
-	.blog-content :global(ol) {
-		margin-top: 1rem;
-		line-height: 1.8;
-	}
-
-	.blog-content :global(ul),
-	.blog-content :global(ol) {
-		padding-left: 1.5rem;
-	}
-
-	.blog-content :global(a) {
-		color: #84cc16;
-		text-decoration: underline;
-		text-underline-offset: 0.2rem;
-	}
-
-	.blog-content :global(code) {
-		border-radius: 0.375rem;
-		background: hsl(220 14% 14%);
-		padding: 0.1rem 0.35rem;
-		font-size: 0.9em;
-	}
-
-	.blog-content :global(pre) {
-		margin-top: 1.25rem;
-		overflow-x: auto;
-		border-radius: 0.75rem;
-		background: hsl(220 16% 12%);
-		padding: 1rem;
-	}
-
-	.blog-content :global(pre code) {
-		background: transparent;
-		padding: 0;
-	}
-</style>
