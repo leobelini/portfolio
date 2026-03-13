@@ -158,6 +158,9 @@ export const obsidianLoader = (globOptions: GlobOptions): Loader => ({
     const copiedAssets = new Set<string>();
     const publicAssetRegistry: PublicAssetRegistry = new Map();
 
+    // Avoid stale entries during dev reloads when IDs or source files change.
+    context.store.clear();
+
     const files = await fg(pattern, {
       cwd: base,
       absolute: true,
