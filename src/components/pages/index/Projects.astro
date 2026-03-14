@@ -1,0 +1,51 @@
+---
+import Divider from '../../ui/Divider.astro';
+import TitleSection from '../../ui/TitleSection.astro';
+import { fetchProjects } from '../../../data/projects';
+import { GitFork, Star } from '@lucide/astro';
+
+const projects = await fetchProjects();
+---
+
+<Divider />
+
+<section
+  class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gray-900 px-10 py-20 sm:px-16 md:px-20"
+  id="projects"
+  aria-label="Projetos"
+>
+  <div class="hero-light hero-light-2" aria-hidden="true"></div>
+
+  <TitleSection>
+    <span slot="subtitle">Projetos</span>
+    <span slot="title">Projetos</span>
+    <span slot="highlight">públicos</span>
+  </TitleSection>
+
+  <div class="mt-10 grid w-full grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      projects.map((repo) => (
+        <a
+          href={repo.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="h-min rounded-lg border border-indigo-900 bg-gray-800 p-6 transition-all duration-300 hover:scale-105 hover:border-indigo-700"
+        >
+          <h3 class="mb-2 text-lg font-semibold text-white">{repo.data.title}</h3>
+          <p class="text-sm text-gray-400">{repo.content}</p>
+
+          <div class="mt-4 flex items-center space-x-4">
+            <div class="flex items-center space-x-1">
+              <Star size={16} class="text-yellow-400" />
+              <span class="text-sm text-gray-400">{repo.stars}</span>
+            </div>
+            <div class="flex items-center space-x-1">
+              <GitFork size={16} class="text-gray-400" />
+              <span class="text-sm text-gray-400">{repo.forks}</span>
+            </div>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</section>
