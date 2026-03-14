@@ -1,4 +1,5 @@
 ---
+import { experienceYears } from '../../data/career';
 export interface Props {
   selector?: string;
 }
@@ -6,9 +7,7 @@ export interface Props {
 const { selector = '[data-experience-years]' } = Astro.props;
 ---
 
-<script define:vars={{ selector }}>
-  const startCareer = 2015;
-  const experienceYears = new Date().getFullYear() - startCareer;
+<script define:vars={{ selector, experienceYears }}>
   const elements = document.querySelectorAll(selector);
 
   for (const element of elements) {
