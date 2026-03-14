@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, envField } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 import tailwindcss from '@tailwindcss/vite';
@@ -12,4 +12,10 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+
+  env: {
+    schema: {
+      GITHUB_TOKEN: envField.string({ access: 'secret', context: 'server', optional: false }),
+    },
+  }
 });
