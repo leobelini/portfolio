@@ -1,4 +1,4 @@
-export const startCareer = 2015;
+const startCareer = 2015;
 
 const currentYear = new Date().getFullYear();
 
