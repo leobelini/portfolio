@@ -8,7 +8,7 @@ type Project = {
   content: string;
   data: {
     title: string;
-  }
+  };
 };
 
 export const fetchProjects = async (): Promise<Project[]> => {
@@ -29,6 +29,7 @@ export const fetchProjects = async (): Promise<Project[]> => {
   const data = await response.json();
 
   const projects = await Promise.all(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     data.items.map(async (item: any) => {
       const repoFull = item.repository.full_name;
 
