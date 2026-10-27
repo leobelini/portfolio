@@ -29,3 +29,9 @@ export function formatEducationDate(date: DateRange | null): string {
 
   return '';
 }
+
+// "YYYY-MM-DD" como data local (new Date(string) interpreta como UTC e recua um dia no Brasil)
+export const parseLocalDate = (value: string) => {
+  const [year, month, day] = value.split('-').map(Number);
+  return new Date(year, month - 1, day);
+};

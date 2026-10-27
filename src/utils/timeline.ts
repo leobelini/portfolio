@@ -1,31 +1,23 @@
 import { formatDate } from './date';
 
+// conta inclusiva: o mês de início e o mês final entram na soma
 const calculateDateDifference = (startDate: Date, endDate: Date) => {
-  let years = endDate.getFullYear() - startDate.getFullYear();
-  let months = endDate.getMonth() - startDate.getMonth();
-
-  if (months < 0) {
-    years--;
-    months += 12;
-  }
-
-  if (endDate.getDate() < startDate.getDate()) {
-    months--;
-    if (months < 0) {
-      years--;
-      months += 12;
-    }
-  }
+  const totalMonths =
+    (endDate.getFullYear() - startDate.getFullYear()) * 12 +
+    (endDate.getMonth() - startDate.getMonth()) +
+    1;
+  const years = Math.floor(totalMonths / 12);
+  const months = totalMonths % 12;
 
   const yearText = years === 1 ? 'ano' : 'anos';
-  const monthText = months === 1 || months === 0 ? 'mês' : 'meses';
+  const monthText = months === 1 ? 'mês' : 'meses';
 
   if (years > 0 && months > 0) {
     return `${years} ${yearText} e ${months} ${monthText}`;
   } else if (years > 0) {
     return `${years} ${yearText}`;
   } else {
-    return `${months || 1} ${monthText}`;
+    return `${months} ${monthText}`;
   }
 };
 

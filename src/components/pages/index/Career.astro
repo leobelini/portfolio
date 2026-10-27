@@ -1,5 +1,6 @@
 ---
 import { formatDateRange } from '../../../utils/timeline';
+import { parseLocalDate } from '../../../utils/date';
 import Container from '../../ui/timeline/Container.astro';
 import Item from '../../ui/timeline/Item.astro';
 import timelineData from '../../../data/timeline.json';
@@ -11,8 +12,8 @@ import TitleSection from '../../ui/TitleSection.astro';
 const timeline: TimelineItem[] = timelineData.map((item) => ({
   ...item,
   date: {
-    start: new Date(item.date.start),
-    end: item.date.end ? new Date(item.date.end) : null,
+    start: parseLocalDate(item.date.start),
+    end: item.date.end ? parseLocalDate(item.date.end) : null,
   },
 }));
 ---
@@ -44,8 +45,8 @@ const timeline: TimelineItem[] = timelineData.map((item) => ({
           </h3>
           <p
             slot="date"
-            data-start={item.date.start.toISOString()}
-            data-end={item.date.end?.toISOString()}
+            data-start={timelineData[index].date.start}
+            data-end={timelineData[index].date.end}
           >
             {formatDateRange(item.date.start, item.date.end)}
           </p>
@@ -63,10 +64,11 @@ const timeline: TimelineItem[] = timelineData.map((item) => ({
 
 <script>
   import { formatDateRange } from '../../../utils/timeline';
+  import { parseLocalDate } from '../../../utils/date';
 
   document.querySelectorAll<HTMLElement>('[data-start]').forEach((el) => {
-    const start = new Date(el.dataset.start!);
-    const end = el.dataset.end ? new Date(el.dataset.end) : null;
+    const start = parseLocalDate(el.dataset.start!);
+    const end = el.dataset.end ? parseLocalDate(el.dataset.end) : null;
     el.textContent = formatDateRange(start, end);
   });
 </script>
