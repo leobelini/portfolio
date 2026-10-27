@@ -1,9 +1,9 @@
 ---
-import { experienceYears } from '../../../data/career';
+import ExperienceYears from '../../ui/ExperienceYears.astro';
 import Tag from '../../ui/Tag.astro';
 import TitleSection from '../../ui/TitleSection.astro';
 
-const technologies = ['React', 'TypeScript', 'Node.js', 'NestJS', 'GoLang'];
+const technologies = ['React', 'TypeScript', 'Node.js', 'NestJS', 'C#'];
 ---
 
 <div class="flex flex-col items-center">
@@ -31,21 +31,19 @@ const technologies = ['React', 'TypeScript', 'Node.js', 'NestJS', 'GoLang'];
   >
     <div>
       <p class="mb-4 max-w-lg text-xl leading-relaxed text-gray-400">
-        Sou Desenvolvedor Full Stack com mais de {experienceYears} anos de atuação no mercado. Já trabalhei
-        em empresas como <a href="https://www.iteam.inf.br/" class="link" target="_parent">ITeam</a
-        >, <a href="https://www.sodretox.com.br/" class="link" target="_parent">Sodré</a>, <a
-          href="https://www.roberty.app/"
-          class="link"
-          target="_parent">Roberty</a
-        > e atualmente estou na <a
-          href="https://www.globalsys.com.br/"
-          class="link"
-          target="_parent">Globalsys</a
-        > como outsourcing.
+        Sou Desenvolvedor Frontend Sênior com mais de <ExperienceYears /> anos de atuação no mercado.
+        Já construí sistemas de gestão, uma plataforma de RPA do zero, integrações com hardware e aplicações
+        em tempo real. Gosto de transformar sistemas grandes em produtos rápidos e fáceis de manter.
       </p>
       <p class="mb-8 max-w-lg text-xl leading-relaxed text-gray-400">
-        Essa diversidade garantiu ampla experiência em diversas tecnologias, desde frontend até
-        backend, mobile e desktop.
+        Passei por empresas como <a href="https://www.iteam.inf.br/" class="link" target="_parent"
+          >Iteam</a
+        >,
+        <a href="https://www.sodretox.com.br/" class="link" target="_parent">Laboratório Sodré</a>,
+        <a href="https://www.roberty.app/" class="link" target="_parent">Roberty</a> e hoje estou na
+        <a href="https://www.globalsys.com.br/" class="link" target="_parent">Globalsys</a>, alocado
+        em clientes. Essa trajetória me deu experiência de ponta a ponta: frontend, backend, mobile
+        e desktop.
       </p>
     </div>
 
