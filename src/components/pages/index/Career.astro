@@ -42,7 +42,13 @@ const timeline: TimelineItem[] = timelineData.map((item) => ({
               <span class="rounded-md bg-indigo-800 px-2 py-0.5 text-sm font-normal">Atual</span>
             )}
           </h3>
-          <p slot="date">{formatDateRange(item.date.start, item.date.end)}</p>
+          <p
+            slot="date"
+            data-start={item.date.start.toISOString()}
+            data-end={item.date.end?.toISOString()}
+          >
+            {formatDateRange(item.date.start, item.date.end)}
+          </p>
           <div slot="description" set:html={item.description} />
           {item?.tags?.map((tag) => (
             <Tag slot="tags" class="text-sm">
@@ -54,3 +60,13 @@ const timeline: TimelineItem[] = timelineData.map((item) => ({
     }
   </Container>
 </section>
+
+<script>
+  import { formatDateRange } from '../../../utils/timeline';
+
+  document.querySelectorAll<HTMLElement>('[data-start]').forEach((el) => {
+    const start = new Date(el.dataset.start!);
+    const end = el.dataset.end ? new Date(el.dataset.end) : null;
+    el.textContent = formatDateRange(start, end);
+  });
+</script>

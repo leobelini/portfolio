@@ -1,0 +1,14 @@
+---
+import { experienceYears } from '../../data/career';
+---
+
+<span data-experience-years>{experienceYears}</span>
+
+<script>
+  import { getExperienceYears } from '../../data/career';
+
+  const years = String(getExperienceYears());
+  document.querySelectorAll('[data-experience-years]').forEach((el) => {
+    el.textContent = years;
+  });
+</script>

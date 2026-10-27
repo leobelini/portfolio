@@ -1,47 +1,45 @@
 [
   {
-    "title": "Globalsys",
-    "date": {
-      "start": "2022-10-01",
-      "end": null
-    },
-    "description": "Alocado em clientes, atuando fortemente com React/TypeScript com Vite e Next.js. Projetos de médio e grande porte, com times de até 20 pessoas. Desenvolvimento de aplicações web, consumindo APIs REST. Participação ativa em todas as fases do ciclo de desenvolvimento, desde a concepção até a entrega e manutenção.",
-    "tags": ["React", "TypeScript", "Vite"]
+    "title": "Globalsys · Frontend Sênior (outsourcing)",
+    "date": { "start": "2022-10-01", "end": null },
+    "description": "<p class=\"mb-3\">Comecei no cliente Wine como desenvolvedor backend em NestJS e depois fui realocado para o cliente principal, a <strong>Águia Branca</strong>, empresa de transporte e frotas. Lá atuo no sistema interno completo de gestão de clientes, contratos, veículos e financeiro.</p><ul class=\"list-inside list-disc space-y-1\"><li>Entreguei <strong>mais de 15 telas</strong> do zero e histórias de usuário que atravessam o sistema inteiro, em React e Vite.</li><li>Criei <strong>componentes de UI e hooks reutilizáveis</strong> que aceleram o desenvolvimento do time.</li><li>Resolvi <strong>dezenas de bugs</strong> e melhorei a performance de telas React.</li><li>Faço revisão de código dos outros desenvolvedores do time.</li><li>Participo de todo o ciclo, da concepção à manutenção, em time de até 20 pessoas.</li><li>Começando a atuar também no backend em C#.</li></ul>",
+    "tags": ["React", "TypeScript", "Vite", "NestJS", "C#"]
   },
   {
-    "title": "HighJump",
-    "date": {
-      "start": "2022-09-01",
-      "end": "2022-10-01"
-    },
-    "description": "Desenvolvimento de automações em clientes utilizando a plataforma <a href=\"https://www.roberty.app/\" target=\"_blank\" rel=\"noopener noreferrer\">Roberty</a>.",
-    "tags": ["Roberty"]
+    "title": "Roberty · Desenvolvedor Full Stack",
+    "date": { "start": "2020-07-01", "end": "2022-09-01" },
+    "description": "<p class=\"mb-3\">Em um time de 4 desenvolvedores, criamos do zero uma <strong>plataforma de RPA</strong> em que o usuário monta fluxos de automação na web, arrastando e soltando blocos (estilo n8n). Os fluxos rodam em um <em>client</em> instalado em máquinas físicas, que clica em telas, navega na web, edita planilhas e lê PDFs, tudo em comunicação em tempo real com a web.</p><ul class=\"list-inside list-disc space-y-1\"><li>Web em React, backend em microsserviços na AWS e client em React com Electron.</li><li>Ações escritas em Node.js, Python e C#.</li><li>Mais de <strong>30 automações</strong> em produção para clientes como <strong>Sicoob</strong> e <strong>Igreja Universal</strong>.</li><li>Dei suporte a cerca de <strong>8 desenvolvedores</strong> que entraram conforme o time crescia.</li></ul>",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Electron",
+      "Node.js",
+      "Python",
+      "C#",
+      "WebSocket",
+      "MongoDB",
+      "AWS"
+    ]
   },
   {
-    "title": "Roberty",
-    "date": {
-      "start": "2020-07-01",
-      "end": "2022-09-01"
-    },
-    "description": "Participação na criação da plataforma de RPA como desenvolvedor full stack. Automações de processos, interfaces, APIs e comunicações em real time.",
-    "tags": ["Node.js", "React", "Electron", "MongoDB", "Typescript", "C#", "Python", "WebSocket"]
+    "title": "Laboratório Sodré · Desenvolvedor Full Stack",
+    "date": { "start": "2017-11-01", "end": "2020-07-01" },
+    "description": "<p class=\"mb-3\">Sistema de gestão completo do laboratório, com módulos de atendimento, ocorrência e logística, em C# MVC.</p><ul class=\"list-inside list-disc space-y-1\"><li><strong>Introduzi o React</strong> em um sistema que usava apenas jQuery.</li><li>Integração com <strong>balanças de precisão</strong> (USB com Raspberry) para pesagem de amostras, com app em Electron e React.</li><li>App de <strong>triagem em tablet</strong> com React Native.</li><li><strong>Biometria de dedos em tempo real</strong>, em C# e web, integrada à API do governo para reduzir fraudes na coleta.</li></ul>",
+    "tags": [
+      "C# MVC",
+      "React",
+      "React Native",
+      "Electron",
+      "Node.js",
+      "SQL Server",
+      "jQuery",
+      "Raspberry Pi"
+    ]
   },
   {
-    "title": "Laboratório Sodré",
-    "date": {
-      "start": "2017-11-01",
-      "end": "2020-07-01"
-    },
-    "description": "Desenvolvimento de sistema laboratorial completo. Módulos de atendimento, ocorrência, logística. Integrações com balanças e impressoras.",
-    "tags": ["C# MVC", "Node.js", "React", "SQL Server", "JQuery", "Electron", "React Native"]
-  },
-  {
-    "title": "Iteam",
-    "date": {
-      "start": "2015-11-01",
-      "end": "2017-10-01"
-    },
-    "description": "Desenvolvimento de sistema laboratorial completo. Módulos de atendimento, ocorrência, logística. Integrações com balanças e impressoras.",
+    "title": "Iteam · Desenvolvedor ABAP",
+    "date": { "start": "2015-11-01", "end": "2017-10-01" },
+    "description": "Fábrica de software com clientes como <strong>Votorantim</strong> e <strong>Raízen</strong>. Desenvolvimento em ABAP no SAP, em diferentes módulos.",
     "tags": ["ABAP", "SAP"]
   }
 ]

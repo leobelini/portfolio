@@ -1,5 +1,6 @@
 export const startCareer = 2015;
 
-const currentYear = new Date().getFullYear();
+export const getExperienceYears = (now = new Date()) => now.getFullYear() - startCareer;
 
-export const experienceYears = currentYear - startCareer;
+// valor inicial (build); o navegador recalcula com a data atual
+export const experienceYears = getExperienceYears();
